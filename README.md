@@ -42,10 +42,10 @@ The first release requires a Conventional Commit affecting `coder-dotnet`; the
 initial manifest version is `0.1.0`.
 
 Renovate tracks pinned base-image digests and annotated tool versions in image
-Dockerfiles. It creates conventional `fix(deps)` commits; Release Please
-associates each update with the image directory it changes, allowing that
-image's patch release to proceed independently. Install or enable the Renovate
-app for this repository to receive update PRs.
+Dockerfiles. It uses conventional `fix(deps)` commits for changes under
+`images/` so Release Please updates the affected image's patch release; updates
+outside `images/` use `chore(deps)`. Install or enable the Renovate app for this
+repository to receive update PRs.
 
 ## Adding an image
 
@@ -60,3 +60,7 @@ tags such as `coder-dotnet-v1.2.3`, which the generic publisher maps back to
 Pull-request validation discovers changed image directories automatically.
 Keep names lowercase and make each component match its image folder name. Add a
 `scripts/` directory only when the Dockerfile needs external scripts or files.
+The `validate-images` status check summarizes the discovery and matrix build
+results; add `validate-images` as the required check in the repository's branch
+ruleset. The workflow runs on every pull request so the required check is
+reported even when no image files changed.
