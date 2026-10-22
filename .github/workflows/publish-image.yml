@@ -1,0 +1,151 @@
+name: Publish image
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Component release tag, for example dotnet-v1.2.3
+        required: true
+        type: string
+  push:
+    tags:
+      - "*-v*"
+
+permissions:
+  contents: read
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    outputs:
+      name: ${{ steps.release.outputs.name }}
+      version: ${{ steps.release.outputs.version }}
+      major: ${{ steps.release.outputs.major }}
+      major_minor: ${{ steps.release.outputs.major_minor }}
+    steps:
+      - name: Resolve release tag
+        id: release
+        env:
+          RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$RELEASE_TAG" =~ ^([a-z0-9][a-z0-9._-]*)-v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]; then
+            image="${BASH_REMATCH[1]}"
+            version="${BASH_REMATCH[2]}.${BASH_REMATCH[3]}.${BASH_REMATCH[4]}"
+          else
+            echo "::error::Expected tag format <image>-v<major>.<minor>.<patch>, got '$RELEASE_TAG'"
+            exit 1
+          fi
+          {
+            echo "name=$image"
+            echo "version=$version"
+            echo "major=${BASH_REMATCH[2]}"
+            echo "major_minor=${BASH_REMATCH[2]}.${BASH_REMATCH[3]}"
+          } >> "$GITHUB_OUTPUT"
+
+  publish:
+    needs: resolve
+    runs-on: ubuntu-latest
+    concurrency:
+      group: publish-${{ github.repository }}-${{ needs.resolve.outputs.name }}
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+
+      - name: Verify image directory
+        env:
+          IMAGE_NAME: ${{ needs.resolve.outputs.name }}
+        run: |
+          if [[ ! -f "images/$IMAGE_NAME/Dockerfile" ]]; then
+            echo "::error::No Dockerfile found at images/$IMAGE_NAME/Dockerfile"
+            exit 1
+          fi
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and publish image
+        working-directory: ./images/${{ needs.resolve.outputs.name }}
+        env:
+          IMAGE_NAME: ${{ needs.resolve.outputs.name }}
+          VERSION: ${{ needs.resolve.outputs.version }}
+          MAJOR: ${{ needs.resolve.outputs.major }}
+          MAJOR_MINOR: ${{ needs.resolve.outputs.major_minor }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="ghcr.io/${GITHUB_REPOSITORY,,}/${IMAGE_NAME,,}"
+          pull_log=$(mktemp)
+          trap 'rm -f "$pull_log"' EXIT
+
+          docker build \
+            --label "org.opencontainers.image.source=https://github.com/$GITHUB_REPOSITORY" \
+            --label "org.opencontainers.image.revision=$GITHUB_SHA" \
+            --label "org.opencontainers.image.version=$VERSION" \
+            --tag "$image:$VERSION" \
+            .
+          docker push "$image:$VERSION"
+
+          version_is_greater() {
+            local candidate="$1"
+            local current="$2"
+            local -a candidate_parts current_parts
+            IFS=. read -r -a candidate_parts <<< "$candidate"
+            IFS=. read -r -a current_parts <<< "$current"
+
+            for index in 0 1 2; do
+              if ((10#${candidate_parts[index]} > 10#${current_parts[index]})); then
+                return 0
+              fi
+              if ((10#${candidate_parts[index]} < 10#${current_parts[index]})); then
+                return 1
+              fi
+            done
+            return 1
+          }
+
+          current_version() {
+            local alias="$1"
+            if docker pull "$image:$alias" >"$pull_log" 2>&1; then
+              local current
+              current=$(docker image inspect \
+                --format '{{ index .Config.Labels "org.opencontainers.image.version" }}' \
+                "$image:$alias")
+              if [[ ! "$current" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]; then
+                echo "::error::The existing $image:$alias image has no valid org.opencontainers.image.version label: '$current'"
+                return 1
+              fi
+              printf '%s' "$current"
+              return 0
+            fi
+
+            if grep -Eqi 'manifest unknown|manifest.*not found|name unknown' "$pull_log"; then
+              printf ''
+              return 0
+            fi
+
+            cat "$pull_log" >&2
+            echo "::error::Failed to inspect existing image tag $image:$alias"
+            return 1
+          }
+
+          for alias in "$MAJOR_MINOR" "$MAJOR" latest; do
+            current=$(current_version "$alias")
+            if [[ -z "$current" ]] || version_is_greater "$VERSION" "$current"; then
+              echo "Promoting $image:$alias from '${current:-missing}' to $VERSION"
+              docker tag "$image:$VERSION" "$image:$alias"
+              docker push "$image:$alias"
+            else
+              echo "Keeping $image:$alias at $current; $VERSION is not newer"
+            fi
+          done

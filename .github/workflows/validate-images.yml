@@ -1,0 +1,61 @@
+name: Validate images
+
+on:
+  pull_request:
+    paths:
+      - "images/**"
+      - ".github/workflows/validate-images.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      images: ${{ steps.changed.outputs.images }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Find changed image directories
+        id: changed
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t changed_images < <(
+            git diff --name-only "$BASE_SHA...$HEAD_SHA" -- images/ |
+              awk -F/ 'NF >= 3 && $1 == "images" { print $2 }' |
+              sort -u
+          )
+          images=()
+          for image in "${changed_images[@]}"; do
+            if [[ -f "images/$image/Dockerfile" ]]; then
+              images+=("$image")
+            fi
+          done
+          if ((${#images[@]})); then
+            json=$(printf '%s\n' "${images[@]}" | jq -R . | jq -s -c .)
+          else
+            json='[]'
+          fi
+          echo "images=$json" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: discover
+    if: needs.discover.outputs.images != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ${{ fromJSON(needs.discover.outputs.images) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        working-directory: ./images/${{ matrix.image }}
+        env:
+          IMAGE_NAME: ${{ matrix.image }}
+        run: docker build --tag "images/$IMAGE_NAME:pull-request" .
