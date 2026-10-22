@@ -13,6 +13,7 @@ RUN apt-get update && \
         ca-certificates \
         curl \
         gnupg \
+        libfontconfig1 \
         libgssapi-krb5-2 \
         libicu-dev \
         libssl-dev \
