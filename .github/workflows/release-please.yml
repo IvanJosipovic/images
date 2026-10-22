@@ -1,0 +1,25 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-please:
+    name: Release Please
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: googleapis/release-please-action@v5
+        id: release
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Enable Pull Request Automerge
+        if: ${{ steps.release.outputs.prs_created == 'true' }}
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GH_PAT }}
+          pull-request-number: ${{ fromJSON(steps.release.outputs.pr).number }}
+          merge-method: squash
