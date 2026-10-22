@@ -70,14 +70,29 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
 # renovate: datasource=npm depName=npm
 ARG NPM_VERSION=12.2.1
 
-# renovate: datasource=npm depName=opencode-ai
-ARG OPENCODE_VERSION=1.19.4
+# renovate: datasource=npm depName=@opencode/cli
+ARG OPENCODE_VERSION=2.1.3
+
+# renovate: datasource=npm depName=@openai/codex
+ARG CODEX_CLI_VERSION=0.163.0
+
+# renovate: datasource=npm depName=@github/copilot
+ARG COPILOT_CLI_VERSION=1.0.103
 
 RUN npm install --global "npm@${NPM_VERSION}" && \
-    npm install --global --allow-scripts=opencode-ai "opencode-ai@${OPENCODE_VERSION}" && \
+    npm install --global \
+        --allow-scripts=@opencode/cli \
+        "@opencode/cli@${OPENCODE_VERSION}" \
+        "@openai/codex@${CODEX_CLI_VERSION}" \
+        "@github/copilot@${COPILOT_CLI_VERSION}" && \
     npm cache clean --force
 
 USER coder
 
+RUN set -eu; \
+    for command in dotnet pwsh powershell node npm yarn opencode codex copilot; do \
+        command -v "$command"; \
+    done
+
 LABEL org.opencontainers.image.title="Coder .NET base image" \
-      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK, PowerShell, Node.js LTS, npm, Yarn, and OpenCode"
+      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK, PowerShell, Node.js LTS, npm, Yarn, OpenCode, Codex CLI, and Copilot CLI"

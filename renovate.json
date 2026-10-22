@@ -4,8 +4,6 @@
     "config:recommended"
   ],
   "semanticCommits": "enabled",
-  "semanticCommitType": "fix",
-  "semanticCommitScope": "deps",
   "customManagers": [
     {
       "customType": "regex",
@@ -18,6 +16,12 @@
     }
   ],
   "packageRules": [
+    {
+      "matchFileNames": [
+        "images/**"
+      ],
+      "semanticCommitType": "fix"
+    },
     {
       "matchDatasources": [
         "dotnet-version"

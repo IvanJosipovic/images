@@ -42,10 +42,10 @@ The first release requires a Conventional Commit affecting `coder-dotnet`; the
 initial manifest version is `0.1.0`.
 
 Renovate tracks pinned base-image digests and annotated tool versions in image
-Dockerfiles. It creates conventional `fix(deps)` commits; Release Please
-associates each update with the image directory it changes, allowing that
-image's patch release to proceed independently. Install or enable the Renovate
-app for this repository to receive update PRs.
+Dockerfiles. It uses conventional `fix(deps)` commits for changes under
+`images/` so Release Please updates the affected image's patch release; updates
+outside `images/` use `chore(deps)`. Install or enable the Renovate app for this
+repository to receive update PRs.
 
 ## Adding an image
 
