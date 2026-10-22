@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: Component release tag, for example dotnet-v1.2.3
+        description: Component release tag, for example coder-dotnet-v1.2.3
         required: true
         type: string
   push:
