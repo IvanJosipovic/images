@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.2.0...coder-dotnet-v0.3.0) (2026-10-22)
+
+
+### Features
+
+* **coder-dotnet:** update Dockerfile and README to include Codex and Copilot CLIs ([#8](https://github.com/IvanJosipovic/images/issues/8)) ([0a8df1c](https://github.com/IvanJosipovic/images/commit/0a8df1cfadfa0effb548250fa9d978e6f34df675))
+
 ## [0.2.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.1.0...coder-dotnet-v0.2.0) (2026-10-22)
 
 
