@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.3.0...coder-dotnet-v0.4.0) (2026-10-22)
+
+
+### Features
+
+* **coder-dotnet:** add libfontconfig1 dependency for improved font h… ([#10](https://github.com/IvanJosipovic/images/issues/10)) ([88b04e0](https://github.com/IvanJosipovic/images/commit/88b04e0c45fd9b2168809457986cb63215e82e7a))
+
 ## [0.3.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.2.0...coder-dotnet-v0.3.0) (2026-10-22)
 
 
