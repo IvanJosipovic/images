@@ -3,12 +3,14 @@
   "extends": [
     "config:recommended"
   ],
-  "commitMessagePrefix": "fix(coder-dotnet):",
+  "semanticCommits": "enabled",
+  "semanticCommitType": "fix",
+  "semanticCommitScope": "deps",
   "customManagers": [
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/images\\/coder-dotnet\\/Dockerfile$/"
+        "/^images\\/[^/]+\\/Dockerfile$/"
       ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)(?: versioning=(?<versioning>\\S+))?\\s+ARG [A-Z0-9_]+=(?<currentValue>\\S+)"

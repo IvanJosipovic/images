@@ -41,11 +41,11 @@ to prevent concurrent releases from moving aliases backwards.
 The first release requires a Conventional Commit affecting `coder-dotnet`; the
 initial manifest version is `0.1.0`.
 
-Renovate tracks the Coder base-image digest and the pinned .NET SDK, PowerShell,
-Node.js LTS, npm, Yarn, and OpenCode versions. Dependency updates use
-`fix(coder-dotnet)` commits so merging an update can trigger a patch image
-release. Install or enable the Renovate app for this repository to receive its
-update PRs.
+Renovate tracks pinned base-image digests and annotated tool versions in image
+Dockerfiles. It creates conventional `fix(deps)` commits; Release Please
+associates each update with the image directory it changes, allowing that
+image's patch release to proceed independently. Install or enable the Renovate
+app for this repository to receive update PRs.
 
 ## Adding an image
 
