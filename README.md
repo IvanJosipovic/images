@@ -54,15 +54,3 @@ Pull-request validation discovers changed image directories automatically.
 Keep names lowercase and make each component match its image folder name. Add a
 `scripts/` directory only when the Dockerfile needs external scripts or files.
 
-## Repository settings
-
-Create a repository Actions secret named `RELEASE_PLEASE_TOKEN` with a fine-
-grained token that can write repository contents, issues, and pull requests.
-Release Please uses it to open release PRs and create tags that start the
-publisher; events created with the built-in `GITHUB_TOKEN` do not start
-downstream workflows.
-Enable **Settings → Actions → General → Workflow permissions → Allow GitHub
-Actions to create and approve pull requests** if the workflow is not permitted
-to create PRs. GHCR packages are public or private according to their package
-visibility settings; ensure the `dotnet` package is associated with this
-repository.
