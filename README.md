@@ -60,3 +60,7 @@ tags such as `coder-dotnet-v1.2.3`, which the generic publisher maps back to
 Pull-request validation discovers changed image directories automatically.
 Keep names lowercase and make each component match its image folder name. Add a
 `scripts/` directory only when the Dockerfile needs external scripts or files.
+The `validate-images` status check summarizes the discovery and matrix build
+results; add `validate-images` as the required check in the repository's branch
+ruleset. The workflow runs on every pull request so the required check is
+reported even when no image files changed.

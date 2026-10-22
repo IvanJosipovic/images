@@ -2,9 +2,6 @@ name: Validate images
 
 on:
   pull_request:
-    paths:
-      - "images/**"
-      - ".github/workflows/validate-images.yml"
 
 permissions:
   contents: read
@@ -59,3 +56,31 @@ jobs:
         env:
           IMAGE_NAME: ${{ matrix.image }}
         run: docker build --tag "images/$IMAGE_NAME:pull-request" .
+
+  validate-images:
+    name: validate-images
+    needs: [discover, build]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check image validation results
+        env:
+          DISCOVER_RESULT: ${{ needs.discover.result }}
+          BUILD_RESULT: ${{ needs.build.result }}
+          IMAGES: ${{ needs.discover.outputs.images }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$DISCOVER_RESULT" != "success" ]]; then
+            echo "::error::Image discovery finished with result: $DISCOVER_RESULT"
+            exit 1
+          fi
+          if [[ "$BUILD_RESULT" == "success" ]]; then
+            exit 0
+          fi
+          if [[ "$BUILD_RESULT" == "skipped" && "$IMAGES" == "[]" ]]; then
+            echo "No changed images to build."
+            exit 0
+          fi
+          echo "::error::Image build finished with result: $BUILD_RESULT"
+          exit 1
