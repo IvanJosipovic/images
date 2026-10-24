@@ -22,7 +22,7 @@
       "matchFileNames": [
         "images/**"
       ],
-      "automerge": "true",
+      "automerge": true,
       "semanticCommitType": "fix"
     },
     {
