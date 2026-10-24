@@ -5,6 +5,10 @@
     "images/coder-dotnet": {
       "release-type": "simple",
       "component": "coder-dotnet"
+    },
+    "images/coder-rea": {
+      "release-type": "simple",
+      "component": "coder-rea"
     }
   }
 }
