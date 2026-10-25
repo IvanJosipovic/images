@@ -8,9 +8,11 @@ Container Registry (GHCR). Each image is maintained and released independently.
 | Image | Description | Package |
 | --- | --- | --- |
 | `coder-dotnet` | Coder Ubuntu image with the latest .NET SDK and developer tools | `ghcr.io/ivanjosipovic/images/coder-dotnet` |
+| `coder-rea` | Coder Ubuntu image with REA and open-source reverse-engineering tools | `ghcr.io/ivanjosipovic/images/coder-rea` |
 
 Image sources live under `images/<image-name>/`. See
-[images/coder-dotnet/README.md](images/coder-dotnet/README.md) for build and usage details.
+[images/coder-dotnet/README.md](images/coder-dotnet/README.md) and
+[images/coder-rea/README.md](images/coder-rea/README.md) for build and usage details.
 
 ## Releases
 
@@ -21,6 +23,7 @@ to the image they affect:
 ```text
 feat(coder-dotnet): add a useful SDK tool
 fix(coder-dotnet): correct the default configuration
+feat(coder-rea): add a useful analysis tool
 ```
 
 Use `feat` for a minor release, `fix` for a patch release, and a breaking-change

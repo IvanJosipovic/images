@@ -81,6 +81,7 @@ jobs:
           VERSION: ${{ needs.resolve.outputs.version }}
           MAJOR: ${{ needs.resolve.outputs.major }}
           MAJOR_MINOR: ${{ needs.resolve.outputs.major_minor }}
+          GITHUB_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
@@ -89,6 +90,7 @@ jobs:
           trap 'rm -f "$pull_log"' EXIT
 
           docker build \
+            --secret id=github_token,env=GITHUB_TOKEN \
             --label "org.opencontainers.image.source=https://github.com/$GITHUB_REPOSITORY" \
             --label "org.opencontainers.image.revision=$GITHUB_SHA" \
             --label "org.opencontainers.image.version=$VERSION" \
