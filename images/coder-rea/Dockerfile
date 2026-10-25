@@ -75,7 +75,7 @@ ARG NODE_VERSION=v24.22.1
 ARG NPM_VERSION=12.2.1
 
 # renovate: datasource=npm depName=rea-agents
-ARG REA_AGENTS_VERSION=6.7.0
+ARG REA_AGENTS_VERSION=6.8.0
 
 # renovate: datasource=npm depName=@opencode/cli
 ARG OPENCODE_VERSION=2.1.4
