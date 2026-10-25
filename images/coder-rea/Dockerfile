@@ -171,7 +171,7 @@ ARG IPSW_VERSION=3.1.739
 ARG JADX_CLI_VERSION=1.5.6
 
 # renovate: datasource=github-releases depName=1013503897/jadx-headless-mcp
-ARG JADX_VERSION=0.7.1
+ARG JADX_VERSION=0.8.0
 
 RUN --mount=type=secret,id=github_token,required=false \
     set -eux; \
