@@ -46,11 +46,22 @@ docker build --tag images/coder-rea:local .
 Pop-Location
 ```
 
-The pipeline uses the same context and build command from this directory:
+The build resolves release assets through the GitHub API. Unauthenticated API
+requests are rate limited, so pass a token as a build secret when you have one:
+
+```powershell
+$env:GITHUB_TOKEN = gh auth token
+Push-Location .\images\coder-rea
+docker build --secret id=github_token,env=GITHUB_TOKEN --tag images/coder-rea:local .
+Pop-Location
+```
+
+The pipeline uses the same context and build command from this directory, with
+`GITHUB_TOKEN` supplied as the `github_token` build secret:
 
 ```powershell
 Set-Location .\images\coder-rea
-docker build .
+docker build --secret id=github_token,env=GITHUB_TOKEN .
 ```
 
 ## Use the image

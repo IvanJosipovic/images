@@ -55,7 +55,8 @@ jobs:
         working-directory: ./images/${{ matrix.image }}
         env:
           IMAGE_NAME: ${{ matrix.image }}
-        run: docker build --tag "images/$IMAGE_NAME:pull-request" .
+          GITHUB_TOKEN: ${{ github.token }}
+        run: docker build --secret id=github_token,env=GITHUB_TOKEN --tag "images/$IMAGE_NAME:pull-request" .
 
   validate-images:
     name: validate-images

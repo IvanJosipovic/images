@@ -102,9 +102,18 @@ RUN node_version="${NODE_VERSION#v}" && \
 # renovate: datasource=github-releases depName=NationalSecurityAgency/ghidra
 ARG GHIDRA_VERSION=12.1.4
 
-RUN set -eux; \
+RUN --mount=type=secret,id=github_token,required=false \
+    set -eux; \
+    github_get() { \
+        if [ -s /run/secrets/github_token ]; then \
+            { set +x; } 2>/dev/null; \
+            curl -fsSL --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors -H "Authorization: Bearer $(cat /run/secrets/github_token)" -H "Accept: application/vnd.github+json" "$1"; \
+        else \
+            curl -fsSL --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors -H "Accept: application/vnd.github+json" "$1"; \
+        fi; \
+    }; \
     release_tag="Ghidra_${GHIDRA_VERSION}_build"; \
-    release_json="$(curl -fsSL --retry 3 "https://api.github.com/repos/NationalSecurityAgency/ghidra/releases/tags/${release_tag}")"; \
+    release_json="$(github_get "https://api.github.com/repos/NationalSecurityAgency/ghidra/releases/tags/${release_tag}")"; \
     download_url="$(printf '%s' "$release_json" | python3 -c 'import json,sys; assets=json.load(sys.stdin)["assets"]; print(next(a["browser_download_url"] for a in assets if a["name"].endswith(".zip") and "PUBLIC" in a["name"]))')"; \
     download_digest="$(printf '%s' "$release_json" | python3 -c 'import json,sys; assets=json.load(sys.stdin)["assets"]; print(next(a["digest"] for a in assets if a["name"].endswith(".zip") and "PUBLIC" in a["name"]))')"; \
     curl -fsSL --retry 3 "$download_url" -o /tmp/ghidra.zip; \
@@ -164,32 +173,41 @@ ARG JADX_CLI_VERSION=1.5.6
 # renovate: datasource=github-releases depName=1013503897/jadx-headless-mcp
 ARG JADX_VERSION=0.7.1
 
-RUN set -eux; \
+RUN --mount=type=secret,id=github_token,required=false \
+    set -eux; \
+    github_get() { \
+        if [ -s /run/secrets/github_token ]; then \
+            { set +x; } 2>/dev/null; \
+            curl -fsSL --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors -H "Authorization: Bearer $(cat /run/secrets/github_token)" -H "Accept: application/vnd.github+json" "$1"; \
+        else \
+            curl -fsSL --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors -H "Accept: application/vnd.github+json" "$1"; \
+        fi; \
+    }; \
     mkdir -p /opt/rea/android /tmp/rea-downloads; \
-    apktool_release="$(curl -fsSL --retry 3 "https://api.github.com/repos/iBotPeaches/Apktool/releases/tags/v${APKTOOL_VERSION}")"; \
-    apktool_asset="$(printf '%s' "$apktool_release" | python3 -c 'import json,sys; a=next(a for a in json.load(sys.stdin)["assets"] if a["name"].endswith(".jar")); print(a["browser_download_url"] + " " + a["digest"].removeprefix("sha256:"))')"; \
+    apktool_release="$(github_get "https://api.github.com/repos/iBotPeaches/Apktool/releases/tags/v${APKTOOL_VERSION}")"; \
+    apktool_asset="$(printf '%s' "$apktool_release" | python3 -c 'import json,sys; a=next(a for a in json.load(sys.stdin)["assets"] if a["name"].endswith(".jar")); print(a["browser_download_url"] + " " + (a["digest"] or "").removeprefix("sha256:"))')"; \
     apktool_url="${apktool_asset% *}"; apktool_digest="${apktool_asset##* }"; \
     curl -fsSL --retry 3 "$apktool_url" -o /opt/rea/android/apktool.jar; \
     printf '%s  %s\n' "$apktool_digest" /opt/rea/android/apktool.jar | sha256sum -c -; \
     printf '#!/bin/sh\nexec java -jar /opt/rea/android/apktool.jar "$@"\n' > /usr/local/bin/apktool; \
     chmod 0755 /usr/local/bin/apktool; \
-    bundletool_release="$(curl -fsSL --retry 3 "https://api.github.com/repos/google/bundletool/releases/tags/${BUNDLETOOL_VERSION}")"; \
-    bundletool_asset="$(printf '%s' "$bundletool_release" | python3 -c 'import json,sys; a=next(a for a in json.load(sys.stdin)["assets"] if a["name"].endswith("-all-" + sys.argv[1] + ".jar")); print(a["browser_download_url"] + " " + a["digest"].removeprefix("sha256:"))' "$BUNDLETOOL_VERSION")"; \
+    bundletool_release="$(github_get "https://api.github.com/repos/google/bundletool/releases/tags/${BUNDLETOOL_VERSION}")"; \
+    bundletool_asset="$(printf '%s' "$bundletool_release" | python3 -c 'import json,sys; a=next(a for a in json.load(sys.stdin)["assets"] if a["name"].endswith("-all-" + sys.argv[1] + ".jar")); print(a["browser_download_url"] + " " + (a["digest"] or "").removeprefix("sha256:"))' "$BUNDLETOOL_VERSION")"; \
     bundletool_url="${bundletool_asset% *}"; bundletool_digest="${bundletool_asset##* }"; \
     curl -fsSL --retry 3 "$bundletool_url" -o /opt/rea/android/bundletool.jar; \
     printf '%s  %s\n' "$bundletool_digest" /opt/rea/android/bundletool.jar | sha256sum -c -; \
     printf '#!/bin/sh\nexec java -jar /opt/rea/android/bundletool.jar "$@"\n' > /usr/local/bin/bundletool; \
     chmod 0755 /usr/local/bin/bundletool; \
-    ipsw_release="$(curl -fsSL --retry 3 "https://api.github.com/repos/blacktop/ipsw/releases/tags/v${IPSW_VERSION}")"; \
+    ipsw_release="$(github_get "https://api.github.com/repos/blacktop/ipsw/releases/tags/v${IPSW_VERSION}")"; \
     ipsw_arch="$TARGETARCH"; if [ "$ipsw_arch" = amd64 ]; then ipsw_arch=x86_64; fi; \
-    ipsw_asset="$(printf '%s' "$ipsw_release" | python3 -c 'import json,sys; arch=sys.argv[1]; a=next(a for a in json.load(sys.stdin)["assets"] if a["name"] == f"ipsw_{sys.argv[2]}_linux_{arch}.tar.gz"); print(a["browser_download_url"] + " " + a["digest"].removeprefix("sha256:"))' "$ipsw_arch" "$IPSW_VERSION")"; \
+    ipsw_asset="$(printf '%s' "$ipsw_release" | python3 -c 'import json,sys; arch=sys.argv[1]; a=next(a for a in json.load(sys.stdin)["assets"] if a["name"] == f"ipsw_{sys.argv[2]}_linux_{arch}.tar.gz"); print(a["browser_download_url"] + " " + (a["digest"] or "").removeprefix("sha256:"))' "$ipsw_arch" "$IPSW_VERSION")"; \
     ipsw_url="${ipsw_asset% *}"; ipsw_digest="${ipsw_asset##* }"; \
     curl -fsSL --retry 3 "$ipsw_url" -o /tmp/rea-downloads/ipsw.tar.gz; \
     printf '%s  %s\n' "$ipsw_digest" /tmp/rea-downloads/ipsw.tar.gz | sha256sum -c -; \
     tar -xzf /tmp/rea-downloads/ipsw.tar.gz -C /tmp/rea-downloads ipsw; \
     install -m 0755 /tmp/rea-downloads/ipsw /usr/local/bin/ipsw; \
-    jadx_cli_release="$(curl -fsSL --retry 3 "https://api.github.com/repos/skylot/jadx/releases/tags/v${JADX_CLI_VERSION}")"; \
-    jadx_cli_asset="$(printf '%s' "$jadx_cli_release" | python3 -c 'import json,sys; a=next(a for a in json.load(sys.stdin)["assets"] if a["name"] == "jadx-" + sys.argv[1] + ".zip"); print(a["browser_download_url"] + " " + a["digest"].removeprefix("sha256:"))' "$JADX_CLI_VERSION")"; \
+    jadx_cli_release="$(github_get "https://api.github.com/repos/skylot/jadx/releases/tags/v${JADX_CLI_VERSION}")"; \
+    jadx_cli_asset="$(printf '%s' "$jadx_cli_release" | python3 -c 'import json,sys; a=next(a for a in json.load(sys.stdin)["assets"] if a["name"] == "jadx-" + sys.argv[1] + ".zip"); print(a["browser_download_url"] + " " + (a["digest"] or "").removeprefix("sha256:"))' "$JADX_CLI_VERSION")"; \
     jadx_cli_url="${jadx_cli_asset% *}"; jadx_cli_digest="${jadx_cli_asset##* }"; \
     curl -fsSL --retry 3 "$jadx_cli_url" -o /tmp/rea-downloads/jadx.zip; \
     printf '%s  %s\n' "$jadx_cli_digest" /tmp/rea-downloads/jadx.zip | sha256sum -c -; \
@@ -197,7 +215,7 @@ RUN set -eux; \
     unzip -q /tmp/rea-downloads/jadx.zip -d /opt/rea/android/jadx; \
     ln -s /opt/rea/android/jadx/bin/jadx /usr/local/bin/jadx; \
     rm -rf /tmp/rea-downloads; \
-    jadx_release="$(curl -fsSL --retry 3 "https://api.github.com/repos/1013503897/jadx-headless-mcp/releases/tags/v${JADX_VERSION}")"; \
+    jadx_release="$(github_get "https://api.github.com/repos/1013503897/jadx-headless-mcp/releases/tags/v${JADX_VERSION}")"; \
     jadx_url="$(printf '%s' "$jadx_release" | python3 -c 'import json,sys; assets=json.load(sys.stdin)["assets"]; print(next(a["browser_download_url"] for a in assets if a["name"].endswith("-all.jar")))')"; \
     jadx_digest="$(printf '%s' "$jadx_release" | python3 -c 'import json,sys; assets=json.load(sys.stdin)["assets"]; print(next(a["digest"] for a in assets if a["name"].endswith("-all.jar")))')"; \
     curl -fsSL --retry 3 "$jadx_url" -o "$REA_JADX_MCP_JAR"; \
