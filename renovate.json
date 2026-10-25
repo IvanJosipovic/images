@@ -19,6 +19,7 @@
   ],
   "packageRules": [
     {
+      "matchUpdateTypes": [ "minor", "patch", "digest" ],
       "matchFileNames": [
         "images/**"
       ],
