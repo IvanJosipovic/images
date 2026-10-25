@@ -41,7 +41,7 @@ RUN node_version="${NODE_VERSION#v}" && \
     rm -rf /var/lib/apt/lists/*
 
 # renovate: datasource=github-releases depName=PowerShell/PowerShell
-ARG POWERSHELL_VERSION=7.6.8
+ARG POWERSHELL_VERSION=7.6.9
 
 RUN set -eux; \
     architecture="$(dpkg --print-architecture)"; \
