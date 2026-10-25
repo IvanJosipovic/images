@@ -127,7 +127,7 @@ RUN --mount=type=secret,id=github_token,required=false \
     rm -rf /tmp/ghidra.zip /opt/ghidra-unpacked
 
 # renovate: datasource=github-releases depName=rust-lang/rust
-ARG RUST_VERSION=1.90.0
+ARG RUST_VERSION=1.99.1
 
 RUN curl -fsSL https://sh.rustup.rs -o /tmp/rustup-init.sh && \
     sh /tmp/rustup-init.sh -y --profile minimal --default-toolchain "$RUST_VERSION" && \
