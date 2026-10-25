@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.4.3...coder-dotnet-v0.4.4) (2026-10-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency powershell/powershell to v7.6.9 ([#35](https://github.com/IvanJosipovic/images/issues/35)) ([67c5840](https://github.com/IvanJosipovic/images/commit/67c584029259e4ffba58eb2fa1d0130a6c5e3f1a))
+
 ## [0.4.3](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.4.2...coder-dotnet-v0.4.3) (2026-10-25)
 
 
