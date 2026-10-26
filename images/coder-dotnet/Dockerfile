@@ -68,6 +68,11 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
         --no-path && \
     rm -f /tmp/dotnet-install.sh
 
+# renovate: datasource=nuget depName=roslyn-language-server
+ARG ROSLYN_LANGUAGE_SERVER_VERSION=5.13.0-1.26514.10
+
+RUN dotnet tool install --tool-path /usr/local/bin roslyn-language-server --version "$ROSLYN_LANGUAGE_SERVER_VERSION"
+
 # renovate: datasource=npm depName=npm
 ARG NPM_VERSION=12.2.1
 
@@ -91,7 +96,7 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
 USER coder
 
 RUN set -eu; \
-    for command in dotnet pwsh powershell node npm yarn opencode codex copilot; do \
+    for command in dotnet roslyn-language-server pwsh powershell node npm yarn opencode codex copilot; do \
         command -v "$command"; \
     done
 
