@@ -1,9 +1,10 @@
 # Coder .NET image
 
 This image extends the pinned `codercom/enterprise-base:ubuntu` image and
-installs the latest .NET 11 SDK, PowerShell, Node.js LTS, npm, Yarn, and
-OpenCode, Codex CLI, and GitHub Copilot CLI. Tool versions are pinned in the
-Dockerfile and updated by Renovate. Package installation is performed as root;
+installs the latest .NET 11 SDK, PowerShell, Node.js LTS, npm, Yarn, Microsoft
+Agent Package Manager, OpenCode, Codex CLI, and GitHub Copilot CLI. Tool
+versions are pinned in the Dockerfile and updated by Renovate. Package
+installation is performed as root;
 the final image runs as the existing `coder` user. All installed commands are
 on `PATH`.
 
@@ -29,7 +30,7 @@ docker build .
 ## Use the image
 
 ```sh
-docker run --rm --entrypoint bash ghcr.io/ivanjosipovic/images/coder-dotnet:latest -lc 'whoami && dotnet --info && pwsh --version && node --version && npm --version && yarn --version && opencode --version && codex --version && copilot --version'
+docker run --rm --entrypoint bash ghcr.io/ivanjosipovic/images/coder-dotnet:latest -lc 'whoami && dotnet --info && pwsh --version && node --version && npm --version && yarn --version && apm --version && opencode --version && codex --version && copilot --version'
 ```
 
 The container starts as user `coder`. Mount a project directory at the

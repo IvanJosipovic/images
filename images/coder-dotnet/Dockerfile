@@ -93,12 +93,18 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
         "@anthropic-ai/claude-code@${CLAUDE_CLI_VERSION}" && \
     npm cache clean --force
 
+# renovate: datasource=github-releases depName=microsoft/apm
+ARG APM_VERSION=0.31.0
+
+RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --prefix /usr/local && \
+    chmod -R a+rX /usr/local/lib/apm
+
 USER coder
 
 RUN set -eu; \
-    for command in dotnet pwsh powershell node npm yarn opencode codex copilot claude; do \
+    for command in dotnet pwsh powershell node npm yarn apm opencode codex copilot claude; do \
         command -v "$command"; \
     done
 
 LABEL org.opencontainers.image.title="Coder .NET base image" \
-      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK, PowerShell, Node.js LTS, npm, Yarn, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
+      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK, PowerShell, Node.js LTS, npm, Yarn, Agent Package Manager, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
