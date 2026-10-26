@@ -96,7 +96,8 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
 # renovate: datasource=github-releases depName=microsoft/apm
 ARG APM_VERSION=0.31.0
 
-RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --prefix /usr/local
+RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --prefix /usr/local && \
+    chmod -R a+rX /usr/local/lib/apm
 
 USER coder
 
