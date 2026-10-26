@@ -80,20 +80,25 @@ ARG CODEX_CLI_VERSION=0.164.0
 # renovate: datasource=npm depName=@github/copilot
 ARG COPILOT_CLI_VERSION=1.0.103
 
+# renovate: datasource=npm depName=@anthropic-ai/claude-code
+ARG CLAUDE_CLI_VERSION=2.1.310
+
 RUN npm install --global "npm@${NPM_VERSION}" && \
     npm install --global \
         --allow-scripts=@opencode/cli \
+        --allow-scripts=@anthropic-ai/claude-code \
         "@opencode/cli@${OPENCODE_VERSION}" \
         "@openai/codex@${CODEX_CLI_VERSION}" \
-        "@github/copilot@${COPILOT_CLI_VERSION}" && \
+        "@github/copilot@${COPILOT_CLI_VERSION}" \
+        "@anthropic-ai/claude-code@${CLAUDE_CLI_VERSION}" && \
     npm cache clean --force
 
 USER coder
 
 RUN set -eu; \
-    for command in dotnet pwsh powershell node npm yarn opencode codex copilot; do \
+    for command in dotnet pwsh powershell node npm yarn opencode codex copilot claude; do \
         command -v "$command"; \
     done
 
 LABEL org.opencontainers.image.title="Coder .NET base image" \
-      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK, PowerShell, Node.js LTS, npm, Yarn, OpenCode, Codex CLI, and Copilot CLI"
+      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK, PowerShell, Node.js LTS, npm, Yarn, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
