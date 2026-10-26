@@ -68,11 +68,6 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
         --no-path && \
     rm -f /tmp/dotnet-install.sh
 
-# renovate: datasource=github-releases depName=microsoft/apm
-ARG APM_VERSION=0.31.0
-
-RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --prefix /usr/local
-
 # renovate: datasource=npm depName=npm
 ARG NPM_VERSION=12.2.1
 
@@ -97,6 +92,11 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
         "@github/copilot@${COPILOT_CLI_VERSION}" \
         "@anthropic-ai/claude-code@${CLAUDE_CLI_VERSION}" && \
     npm cache clean --force
+
+# renovate: datasource=github-releases depName=microsoft/apm
+ARG APM_VERSION=0.31.0
+
+RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --prefix /usr/local
 
 USER coder
 
