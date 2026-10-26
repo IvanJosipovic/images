@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.5.1](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.5.0...coder-dotnet-v0.5.1) (2026-10-26)
+
+
+### Bug Fixes
+
+* **deps:** update codercom/enterprise-base:ubuntu docker digest to e36751f ([#40](https://github.com/IvanJosipovic/images/issues/40)) ([a4c2c57](https://github.com/IvanJosipovic/images/commit/a4c2c57bda34c3cf75027b611a646abe15166acd))
+
+## [0.5.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.4.4...coder-dotnet-v0.5.0) (2026-10-26)
+
+
+### Features
+
+* add support for Claude Code CLI in Dockerfile ([#38](https://github.com/IvanJosipovic/images/issues/38)) ([354ef03](https://github.com/IvanJosipovic/images/commit/354ef03c56439c11c5affc50c2dcbd611e58387c))
+
 ## [0.4.4](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.4.3...coder-dotnet-v0.4.4) (2026-10-25)
 
 
