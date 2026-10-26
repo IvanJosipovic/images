@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.4.4...coder-dotnet-v0.5.0) (2026-10-26)
+
+
+### Features
+
+* add support for Claude Code CLI in Dockerfile ([#38](https://github.com/IvanJosipovic/images/issues/38)) ([354ef03](https://github.com/IvanJosipovic/images/commit/354ef03c56439c11c5affc50c2dcbd611e58387c))
+
 ## [0.4.4](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.4.3...coder-dotnet-v0.4.4) (2026-10-25)
 
 
