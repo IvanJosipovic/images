@@ -68,6 +68,11 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
         --no-path && \
     rm -f /tmp/dotnet-install.sh
 
+# renovate: datasource=github-releases depName=microsoft/apm
+ARG APM_VERSION=0.31.0
+
+RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --prefix /usr/local
+
 # renovate: datasource=npm depName=npm
 ARG NPM_VERSION=12.2.1
 
@@ -96,9 +101,9 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
 USER coder
 
 RUN set -eu; \
-    for command in dotnet pwsh powershell node npm yarn opencode codex copilot claude; do \
+    for command in dotnet pwsh powershell node npm yarn apm opencode codex copilot claude; do \
         command -v "$command"; \
     done
 
 LABEL org.opencontainers.image.title="Coder .NET base image" \
-      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK, PowerShell, Node.js LTS, npm, Yarn, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
+      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK, PowerShell, Node.js LTS, npm, Yarn, Agent Package Manager, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
