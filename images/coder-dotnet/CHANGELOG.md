@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.5.1...coder-dotnet-v0.6.0) (2026-10-26)
+
+
+### Features
+
+* add Microsoft Agent Package Manager support ([#42](https://github.com/IvanJosipovic/images/issues/42)) ([96e173a](https://github.com/IvanJosipovic/images/commit/96e173a68fa053b154125f6f6233a7e59625202e))
+
+
+### Bug Fixes
+
+* **deps:** update dependency microsoft/apm to v0.35.0 ([#44](https://github.com/IvanJosipovic/images/issues/44)) ([1883bef](https://github.com/IvanJosipovic/images/commit/1883bef555319a81c581df2a81344823d34c3b89))
+
 ## [0.5.1](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.5.0...coder-dotnet-v0.5.1) (2026-10-26)
 
 
