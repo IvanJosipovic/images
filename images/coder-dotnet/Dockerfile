@@ -81,7 +81,7 @@ ARG CODEX_CLI_VERSION=0.164.0
 ARG COPILOT_CLI_VERSION=1.0.103
 
 # renovate: datasource=npm depName=@anthropic-ai/claude-code
-ARG CLAUDE_CLI_VERSION=2.1.310
+ARG CLAUDE_CLI_VERSION=2.1.311
 
 RUN npm install --global "npm@${NPM_VERSION}" && \
     npm install --global \
