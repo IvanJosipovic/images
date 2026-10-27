@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.2.4...coder-rea-v0.2.5) (2026-10-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @opencode/cli to v2.2.0 ([#49](https://github.com/IvanJosipovic/images/issues/49)) ([6826941](https://github.com/IvanJosipovic/images/commit/6826941881f0c31c0a7cacf2d993720731a8e0df))
+
 ## [0.2.4](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.2.3...coder-rea-v0.2.4) (2026-10-27)
 
 
