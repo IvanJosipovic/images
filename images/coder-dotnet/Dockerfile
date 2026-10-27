@@ -72,7 +72,7 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
 ARG NPM_VERSION=12.2.1
 
 # renovate: datasource=npm depName=@opencode/cli
-ARG OPENCODE_VERSION=2.1.4
+ARG OPENCODE_VERSION=2.2.0
 
 # renovate: datasource=npm depName=@openai/codex
 ARG CODEX_CLI_VERSION=0.164.0
