@@ -28,7 +28,7 @@ RUN mkdir -p /usr/share/keyrings && \
     curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 
 # renovate: datasource=node-version depName=node
-ARG NODE_VERSION=24.22.2
+ARG NODE_VERSION=26.13.0
 
 # renovate: datasource=npm depName=yarn
 ARG YARN_VERSION=1.22.22
