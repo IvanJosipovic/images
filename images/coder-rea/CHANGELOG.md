@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.7](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.2.6...coder-rea-v0.2.7) (2026-10-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.105 ([#55](https://github.com/IvanJosipovic/images/issues/55)) ([e46650b](https://github.com/IvanJosipovic/images/commit/e46650b61f3d376f3851ff9c6de8fec455903cad))
+
 ## [0.2.6](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.2.5...coder-rea-v0.2.6) (2026-10-27)
 
 
