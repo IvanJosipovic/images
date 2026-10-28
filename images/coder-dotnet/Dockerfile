@@ -59,7 +59,7 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/*
 
 # renovate: datasource=dotnet-version depName=dotnet-sdk versioning=dotnet
-ARG DOTNET_SDK_VERSION=11.0.100-rc.2.26504.105
+ARG DOTNET_SDK_VERSION=11.0.100-rc.3.26522.148
 
 RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && \
     bash /tmp/dotnet-install.sh \
