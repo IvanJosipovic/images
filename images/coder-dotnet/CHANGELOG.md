@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.9](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.6.8...coder-dotnet-v0.6.9) (2026-10-28)
+
+
+### Bug Fixes
+
+* **deps:** update node.js to v24.22.2 ([#65](https://github.com/IvanJosipovic/images/issues/65)) ([7a839be](https://github.com/IvanJosipovic/images/commit/7a839bea88d68fe2c49af79d5949b282f058207a))
+
 ## [0.6.8](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.6.7...coder-dotnet-v0.6.8) (2026-10-28)
 
 
