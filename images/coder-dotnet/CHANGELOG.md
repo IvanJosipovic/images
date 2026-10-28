@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.7](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.6.6...coder-dotnet-v0.6.7) (2026-10-28)
+
+
+### Bug Fixes
+
+* **deps:** Update DOTNET_SDK_VERSION to rc.3.26522.148 ([4eb220e](https://github.com/IvanJosipovic/images/commit/4eb220ef06415c28887670e660f5ed5ea327ca75))
+
 ## [0.6.6](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.6.5...coder-dotnet-v0.6.6) (2026-10-28)
 
 
