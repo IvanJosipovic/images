@@ -59,7 +59,7 @@ with `"component": "coder-dotnet"` and the manifest version is stored under
 the `images/coder-dotnet` key in `.release-please-manifest.json`. This produces
 tags such as `coder-dotnet-v1.2.3`, which the generic publisher maps back to
 `images/coder-dotnet`.
-
+ 
 Pull-request validation discovers changed image directories automatically.
 Keep names lowercase and make each component match its image folder name. Add a
 `scripts/` directory only when the Dockerfile needs external scripts or files.
