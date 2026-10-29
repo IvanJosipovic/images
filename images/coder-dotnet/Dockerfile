@@ -10,6 +10,7 @@ ENV DOTNET_ROOT=/usr/share/dotnet \
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+        bubblewrap \
         ca-certificates \
         curl \
         gnupg \
@@ -102,7 +103,7 @@ RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --pr
 USER coder
 
 RUN set -eu; \
-    for command in dotnet pwsh powershell node npm yarn apm opencode codex copilot claude; do \
+    for command in bwrap dotnet pwsh powershell node npm yarn apm opencode codex copilot claude; do \
         command -v "$command"; \
     done
 
