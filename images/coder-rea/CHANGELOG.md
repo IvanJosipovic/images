@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.11](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.2.10...coder-rea-v0.2.11) (2026-10-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.166.0 ([#72](https://github.com/IvanJosipovic/images/issues/72)) ([0a6873c](https://github.com/IvanJosipovic/images/commit/0a6873cf7a622a796453e590310c3ea4ff033fe5))
+* **deps:** update dependency @opencode/cli to v2.2.2 ([#71](https://github.com/IvanJosipovic/images/issues/71)) ([89d19fe](https://github.com/IvanJosipovic/images/commit/89d19fe437cf7fbbc21ca198897fc9ce3a3a1e06))
+
 ## [0.2.10](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.2.9...coder-rea-v0.2.10) (2026-10-29)
 
 
