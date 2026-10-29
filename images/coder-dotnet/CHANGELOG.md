@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.6.9...coder-dotnet-v0.7.0) (2026-10-29)
+
+
+### Features
+
+* add more tools to dotnet image ([#67](https://github.com/IvanJosipovic/images/issues/67)) ([d7a1365](https://github.com/IvanJosipovic/images/commit/d7a13658fc0e3a4f816710917e11c7542b21a30e))
+
 ## [0.6.9](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.6.8...coder-dotnet-v0.6.9) (2026-10-28)
 
 
