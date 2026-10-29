@@ -13,7 +13,9 @@ RUN apt-get update && \
         bubblewrap \
         ca-certificates \
         curl \
+        gdb \
         gnupg \
+        lldb \
         libfontconfig1 \
         libgssapi-krb5-2 \
         libicu-dev \
@@ -69,6 +71,35 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
         --no-path && \
     rm -f /tmp/dotnet-install.sh
 
+# renovate: datasource=nuget depName=dotnet-stack
+ARG DOTNET_STACK_VERSION=10.0.750501
+
+# renovate: datasource=nuget depName=dotnet-dump
+ARG DOTNET_DUMP_VERSION=10.0.750501
+
+RUN dotnet tool install --tool-path /usr/local/bin \
+        --version "$DOTNET_STACK_VERSION" dotnet-stack && \
+    dotnet tool install --tool-path /usr/local/bin \
+        --version "$DOTNET_DUMP_VERSION" dotnet-dump
+
+# renovate: datasource=github-releases depName=Samsung/netcoredbg
+ARG NETCOREDBG_VERSION=3.2.0-1092
+
+RUN set -eux; \
+    architecture="$(dpkg --print-architecture)"; \
+    case "$architecture" in \
+        amd64|arm64) ;; \
+        *) echo "Unsupported architecture for netcoredbg: $architecture" >&2; exit 1 ;; \
+    esac; \
+    archive="netcoredbg-linux-${architecture}.tar.gz"; \
+    release_url="https://github.com/Samsung/netcoredbg/releases/download/${NETCOREDBG_VERSION}"; \
+    curl -fsSL --retry 3 "$release_url/$archive" -o "/tmp/$archive"; \
+    mkdir -p /usr/local/lib/netcoredbg; \
+    tar -xzf "/tmp/$archive" -C /usr/local/lib/netcoredbg --strip-components=1; \
+    rm -f "/tmp/$archive"; \
+    chmod -R a+rX /usr/local/lib/netcoredbg; \
+    ln -s /usr/local/lib/netcoredbg/netcoredbg /usr/local/bin/netcoredbg
+
 # renovate: datasource=npm depName=npm
 ARG NPM_VERSION=12.2.1
 
@@ -103,9 +134,9 @@ RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --pr
 USER coder
 
 RUN set -eu; \
-    for command in bwrap dotnet pwsh powershell node npm yarn apm opencode codex copilot claude; do \
+    for command in bwrap dotnet dotnet-stack dotnet-dump gdb lldb netcoredbg pwsh powershell node npm yarn apm opencode codex copilot claude; do \
         command -v "$command"; \
     done
 
 LABEL org.opencontainers.image.title="Coder .NET base image" \
-      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK, PowerShell, Node.js LTS, npm, Yarn, Agent Package Manager, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
+      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK and diagnostics, GDB, LLDB, NetCoreDbg, PowerShell, Node.js LTS, npm, Yarn, Agent Package Manager, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
