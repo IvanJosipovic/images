@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.3](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.2...coder-dotnet-v0.7.3) (2026-10-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @anthropic-ai/claude-code to v2.1.314 ([#74](https://github.com/IvanJosipovic/images/issues/74)) ([fdafadc](https://github.com/IvanJosipovic/images/commit/fdafadc10e950896fb58b83c30c93ceb76bfe884))
+
 ## [0.7.2](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.1...coder-dotnet-v0.7.2) (2026-10-29)
 
 
