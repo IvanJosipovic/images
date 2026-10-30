@@ -78,7 +78,7 @@ ARG NPM_VERSION=12.2.1
 ARG REA_AGENTS_VERSION=6.8.0
 
 # renovate: datasource=npm depName=@opencode/cli
-ARG OPENCODE_VERSION=2.2.2
+ARG OPENCODE_VERSION=2.2.3
 
 # renovate: datasource=npm depName=@openai/codex
 ARG CODEX_CLI_VERSION=0.166.0
