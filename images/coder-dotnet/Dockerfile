@@ -28,7 +28,7 @@ RUN apt-get update && \
 RUN mkdir -p /usr/share/keyrings && \
     curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor --yes -o /usr/share/keyrings/yarnkey.gpg && \
     echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list && \
-    curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+    curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
 
 # renovate: datasource=node-version depName=node
 ARG NODE_VERSION=24.22.2
