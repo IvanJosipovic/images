@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.2.16...coder-rea-v0.3.0) (2026-11-03)
+
+
+### Features
+
+* add REA_BINWALK_COMMAND and REA_UNBLOB_COMMAND environment vars ([#91](https://github.com/IvanJosipovic/images/issues/91)) ([f15d088](https://github.com/IvanJosipovic/images/commit/f15d088726cc098ac3453b7211d478559b22662a))
+
 ## [0.2.16](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.2.15...coder-rea-v0.2.16) (2026-11-02)
 
 
