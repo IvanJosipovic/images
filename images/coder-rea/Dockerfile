@@ -24,9 +24,11 @@ RUN apt-get update && \
         file \
         gdb \
         git \
+        gawk \
         gnupg \
         g++ \
         libbz2-dev \
+        libncurses-dev \
         libfontconfig1 \
         libfontconfig1-dev \
         libglib2.0-0 \
