@@ -22,7 +22,8 @@ The image is published to `ghcr.io/ivanjosipovic/images/coder-rea`.
   compatible device/tooling.
 - Firmware analysis: Binwalk 3, Unblob, `prlimit`, and common archive/filesystem
   utilities. Unblob may report missing format-specific extractors for less
-  common formats.
+  common formats. `REA_BINWALK_COMMAND` and `REA_UNBLOB_COMMAND` point REA to
+  the bundled tools.
 - Native diagnostics: GNU binutils, GDB, and pwntools for workflows that use
   caller-selected debugger/diagnostic tools.
 - Browser observation: Google Chrome on amd64 and the libraries needed for

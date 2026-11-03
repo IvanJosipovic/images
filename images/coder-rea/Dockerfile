@@ -9,6 +9,8 @@ ENV NPM_CONFIG_PREFIX=/usr/local \
     JAVA_HOME=/usr/lib/jvm/java-21-openjdk-${TARGETARCH} \
     GHIDRA_INSTALL_DIR=/opt/ghidra \
     REA_JADX_MCP_JAR=/opt/rea/android/jadx-headless-mcp.jar \
+    REA_BINWALK_COMMAND=/usr/local/bin/binwalk \
+    REA_UNBLOB_COMMAND=/usr/local/bin/unblob \
     PATH="/usr/local/bin:/opt/ghidra:/opt/ghidra/support:/usr/lib/jvm/java-21-openjdk-${TARGETARCH}/bin:/usr/bin:${PATH}"
 
 RUN apt-get update && \
