@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.0...coder-rea-v0.3.1) (2026-11-03)
+
+
+### Bug Fixes
+
+* add missing dependencies gawk and libncurses-dev to Dockerfile ([#93](https://github.com/IvanJosipovic/images/issues/93)) ([7c24ca8](https://github.com/IvanJosipovic/images/commit/7c24ca836b53227faad8f530f65464569663a5a8))
+
 ## [0.3.0](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.2.16...coder-rea-v0.3.0) (2026-11-03)
 
 
