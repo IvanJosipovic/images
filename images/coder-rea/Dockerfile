@@ -90,6 +90,9 @@ ARG CODEX_CLI_VERSION=0.166.0
 # renovate: datasource=npm depName=@github/copilot
 ARG COPILOT_CLI_VERSION=1.0.105
 
+# renovate: datasource=npm depName=@deepseek-ai/dsh
+ARG DEEPSEEK_HARNESS_VERSION=0.2.1-rc.5
+
 RUN node_version="${NODE_VERSION#v}" && \
     apt-get update && \
     apt-get install -y --no-install-recommends "nodejs=${node_version}-1nodesource1" && \
@@ -100,7 +103,8 @@ RUN node_version="${NODE_VERSION#v}" && \
         "rea-agents@${REA_AGENTS_VERSION}" \
         "@opencode/cli@${OPENCODE_VERSION}" \
         "@openai/codex@${CODEX_CLI_VERSION}" \
-        "@github/copilot@${COPILOT_CLI_VERSION}" && \
+        "@github/copilot@${COPILOT_CLI_VERSION}" \
+        "@deepseek-ai/dsh@${DEEPSEEK_HARNESS_VERSION}" && \
     npm cache clean --force
 
 # renovate: datasource=github-releases depName=NationalSecurityAgency/ghidra
@@ -229,9 +233,10 @@ RUN --mount=type=secret,id=github_token,required=false \
 USER coder
 
 RUN set -eu; \
-    for command in rea node npm java ghidraRun analyzeHeadless binwalk unblob frida frida-ps frida-trace jadx apktool bundletool ipsw tshark prlimit adb sigrok-cli wasm-validate; do \
+    for command in rea node npm dsh java ghidraRun analyzeHeadless binwalk unblob frida frida-ps frida-trace jadx apktool bundletool ipsw tshark prlimit adb sigrok-cli wasm-validate; do \
         command -v "$command"; \
     done; \
+    dsh --version >/dev/null; \
     if [ "$(dpkg --print-architecture)" = amd64 ]; then command -v google-chrome-stable; fi; \
     test -r "$REA_JADX_MCP_JAR"; \
     java --list-modules | grep -q '^jdk.compiler@'; \
@@ -243,4 +248,4 @@ RUN set -eu; \
     ipsw version >/dev/null
 
 LABEL org.opencontainers.image.title="Coder REA image" \
-      org.opencontainers.image.description="Coder Ubuntu base with REA, Ghidra, Android and Apple analysis tools, firmware tools, Chrome, and agent CLIs"
+      org.opencontainers.image.description="Coder Ubuntu base with REA, Ghidra, Android and Apple analysis tools, firmware tools, Chrome, DeepSeek Harness, and agent CLIs"

@@ -2,8 +2,8 @@
 
 This image extends the digest-pinned `codercom/enterprise-base:ubuntu` image
 with the REA CLI, Node.js 24, npm, OpenCode, Codex CLI, GitHub Copilot CLI,
-Ghidra, JADX, Apktool, bundletool, ipsw, Frida, Google Chrome on amd64,
-Binwalk, Unblob, and common analysis dependencies.
+DeepSeek Harness, Ghidra, JADX, Apktool, bundletool, ipsw, Frida, Google
+Chrome on amd64, Binwalk, Unblob, and common analysis dependencies.
 Versions are pinned in the Dockerfile and updated by Renovate. Package
 installation is performed as root; the final image runs as the existing
 `coder` user.
@@ -68,7 +68,7 @@ docker build --secret id=github_token,env=GITHUB_TOKEN .
 ## Use the image
 
 ```sh
-docker run --rm --entrypoint bash ghcr.io/ivanjosipovic/images/coder-rea:latest -lc 'whoami && rea --version && node --version && npm --version && java --version && frida --version && jadx --version && apktool --version && bundletool version && ipsw version && binwalk --version && unblob --version && tshark --version && if [ "$(dpkg --print-architecture)" = amd64 ]; then google-chrome-stable --version; fi'
+docker run --rm --entrypoint bash ghcr.io/ivanjosipovic/images/coder-rea:latest -lc 'whoami && rea --version && node --version && npm --version && dsh --version && java --version && frida --version && jadx --version && apktool --version && bundletool version && ipsw version && binwalk --version && unblob --version && tshark --version && if [ "$(dpkg --print-architecture)" = amd64 ]; then google-chrome-stable --version; fi'
 ```
 
 Run `rea setup` inside the workspace to register REA with your selected agent

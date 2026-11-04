@@ -112,6 +112,9 @@ ARG CODEX_CLI_VERSION=0.166.0
 # renovate: datasource=npm depName=@github/copilot
 ARG COPILOT_CLI_VERSION=1.0.105
 
+# renovate: datasource=npm depName=@deepseek-ai/dsh
+ARG DEEPSEEK_HARNESS_VERSION=0.2.1-rc.5
+
 # renovate: datasource=npm depName=@anthropic-ai/claude-code
 ARG CLAUDE_CLI_VERSION=2.1.318
 
@@ -122,6 +125,7 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
         "@opencode/cli@${OPENCODE_VERSION}" \
         "@openai/codex@${CODEX_CLI_VERSION}" \
         "@github/copilot@${COPILOT_CLI_VERSION}" \
+        "@deepseek-ai/dsh@${DEEPSEEK_HARNESS_VERSION}" \
         "@anthropic-ai/claude-code@${CLAUDE_CLI_VERSION}" && \
     npm cache clean --force
 
@@ -134,9 +138,10 @@ RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --pr
 USER coder
 
 RUN set -eu; \
-    for command in bwrap dotnet dotnet-stack dotnet-dump gdb lldb netcoredbg pwsh powershell node npm yarn apm opencode codex copilot claude; do \
+    for command in bwrap dotnet dotnet-stack dotnet-dump gdb lldb netcoredbg pwsh powershell node npm yarn apm opencode codex copilot dsh claude; do \
         command -v "$command"; \
-    done
+    done; \
+    dsh --version >/dev/null
 
 LABEL org.opencontainers.image.title="Coder .NET base image" \
-      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK and diagnostics, GDB, LLDB, NetCoreDbg, PowerShell, Node.js LTS, npm, Yarn, Agent Package Manager, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
+      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK and diagnostics, GDB, LLDB, NetCoreDbg, PowerShell, Node.js LTS, npm, Yarn, Agent Package Manager, OpenCode, Codex CLI, Copilot CLI, DeepSeek Harness, and Claude Code CLI"
