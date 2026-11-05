@@ -101,7 +101,7 @@ RUN set -eux; \
     ln -s /usr/local/lib/netcoredbg/netcoredbg /usr/local/bin/netcoredbg
 
 # renovate: datasource=npm depName=npm
-ARG NPM_VERSION=12.2.1
+ARG NPM_VERSION=12.2.2
 
 # renovate: datasource=npm depName=@opencode/cli
 ARG OPENCODE_VERSION=2.2.5
