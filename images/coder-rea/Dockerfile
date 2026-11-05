@@ -76,7 +76,7 @@ RUN mkdir -p /usr/share/keyrings && \
 ARG NODE_VERSION=24.22.2
 
 # renovate: datasource=npm depName=npm
-ARG NPM_VERSION=12.2.1
+ARG NPM_VERSION=12.2.2
 
 # renovate: datasource=npm depName=rea-agents
 ARG REA_AGENTS_VERSION=6.8.0
