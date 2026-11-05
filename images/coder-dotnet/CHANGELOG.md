@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.10](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.9...coder-dotnet-v0.7.10) (2026-11-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency npm to v12.2.2 ([#97](https://github.com/IvanJosipovic/images/issues/97)) ([14775f0](https://github.com/IvanJosipovic/images/commit/14775f038c998e231fc73fe41f99d3ee3a3faf03))
+
 ## [0.7.9](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.8...coder-dotnet-v0.7.9) (2026-11-04)
 
 
