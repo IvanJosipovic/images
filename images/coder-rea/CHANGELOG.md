@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.1...coder-rea-v0.3.2) (2026-11-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency npm to v12.2.2 ([#97](https://github.com/IvanJosipovic/images/issues/97)) ([14775f0](https://github.com/IvanJosipovic/images/commit/14775f038c998e231fc73fe41f99d3ee3a3faf03))
+
 ## [0.3.1](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.0...coder-rea-v0.3.1) (2026-11-03)
 
 
