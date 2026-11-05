@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.3](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.2...coder-rea-v0.3.3) (2026-11-05)
+
+
+### Bug Fixes
+
+* **deps:** update codercom/enterprise-base:ubuntu docker digest to 1846470 ([#100](https://github.com/IvanJosipovic/images/issues/100)) ([8077623](https://github.com/IvanJosipovic/images/commit/80776238e0048c55bbdf1698d8b083fbe6d27713))
+* **deps:** update dependency blacktop/ipsw to v3.1.742 ([#99](https://github.com/IvanJosipovic/images/issues/99)) ([ee124cf](https://github.com/IvanJosipovic/images/commit/ee124cf7c5db996f6b66d2c92115243cd2a28b00))
+
 ## [0.3.2](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.1...coder-rea-v0.3.2) (2026-11-05)
 
 
