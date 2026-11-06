@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.4](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.3...coder-rea-v0.3.4) (2026-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.106 ([#102](https://github.com/IvanJosipovic/images/issues/102)) ([2426709](https://github.com/IvanJosipovic/images/commit/24267092b10dfa516f9fba62459e268e2d1f5ed4))
+* **deps:** update dependency @openai/codex to v0.167.0 ([#104](https://github.com/IvanJosipovic/images/issues/104)) ([e75712f](https://github.com/IvanJosipovic/images/commit/e75712f1d6220e4dea0bbd7e651fb1334d5a93d5))
+* **deps:** update dependency blacktop/ipsw to v3.1.743 ([#103](https://github.com/IvanJosipovic/images/issues/103)) ([5b7b2c4](https://github.com/IvanJosipovic/images/commit/5b7b2c48214d8e6914159c319ea3aea7cc1c89c9))
+
 ## [0.3.3](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.2...coder-rea-v0.3.3) (2026-11-05)
 
 
