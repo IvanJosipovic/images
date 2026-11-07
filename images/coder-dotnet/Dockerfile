@@ -104,7 +104,7 @@ RUN set -eux; \
 ARG NPM_VERSION=12.2.2
 
 # renovate: datasource=npm depName=@opencode/cli
-ARG OPENCODE_VERSION=2.2.5
+ARG OPENCODE_VERSION=2.2.6
 
 # renovate: datasource=npm depName=@openai/codex
 ARG CODEX_CLI_VERSION=0.167.0
