@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.2.1...paperclip-base-v0.2.2) (2026-11-08)
+
+
+### Bug Fixes
+
+* **paperclip-base:** trust /workspace Git ownership ([#121](https://github.com/IvanJosipovic/images/issues/121)) ([bfb828d](https://github.com/IvanJosipovic/images/commit/bfb828da1e31591ce56cf8cc2834150280384533))
+
 ## [0.2.1](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.2.0...paperclip-base-v0.2.1) (2026-11-08)
 
 
