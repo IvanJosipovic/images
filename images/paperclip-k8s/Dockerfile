@@ -1,4 +1,4 @@
-FROM ghcr.io/paperclipai/paperclip:2026.1106.0@sha256:d6584f05cf57a4b26c117eb083725f18c1fe69ddafa7d16f9c8cce83f6fa17da
+FROM ghcr.io/paperclipai/paperclip:2026.1106.0
 
 WORKDIR /app
 

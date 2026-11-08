@@ -21,8 +21,8 @@ docker build --tag images/paperclip-k8s:local .
 Pop-Location
 ```
 
-The Dockerfile pins the official Paperclip base image by version and manifest
-digest. It patches the matching upstream TypeScript source, rebuilds the server
+The Dockerfile pins the official Paperclip base image by its immutable release
+version. It patches the matching upstream TypeScript source, rebuilds the server
 runtime bundle, and fails the build if the fix is absent from the output.
 
 The image repository's Release Please and publish-image workflows publish
