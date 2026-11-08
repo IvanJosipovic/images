@@ -9,8 +9,8 @@ COPY patch-environment-run-orchestrator.mjs /tmp/patch-environment-run-orchestra
 
 RUN node /tmp/patch-kubernetes-lease.mjs \
     && node /tmp/patch-environment-run-orchestrator.mjs \
-    && pnpm --dir /app/packages/plugins/sandbox-providers/kubernetes exec tsc \
-      --typeRoots /app/node_modules/.pnpm/@types+node@24.13.3/node_modules/@types \
+    && pnpm install --filter @paperclipai/plugin-kubernetes --prod=false --ignore-scripts --frozen-lockfile \
+    && pnpm --dir /app/packages/plugins/sandbox-providers/kubernetes build \
     && pnpm --filter @paperclipai/server exec tsc \
     && node /app/server/scripts/bundle-runtime.mjs \
     && node --input-type=module -e '\
