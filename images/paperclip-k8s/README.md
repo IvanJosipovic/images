@@ -1,11 +1,12 @@
 # Paperclip Kubernetes image
 
-This image extends the official Paperclip server image and applies the upstream
-workspace-realization fix from commit
-[`c1a62bca6270903761e1dfc1927f110efe3150a9`](https://github.com/paperclipai/paperclip/commit/c1a62bca6270903761e1dfc1927f110efe3150a9).
-The fix persists a remote provider's realized working directory (for example,
-`/workspace`) as `remoteCwd` on the lease before Paperclip resolves the
-execution target. Without it, the affected release falls back to `/tmp`.
+This image extends the official Paperclip server image with both sides of the
+Kubernetes native file-sync lease fix:
+
+- Fresh leases start with `/workspace`, so managed assets can sync before the
+  server realizes a workspace.
+- Resumed leases preserve their prior `remoteCwd` (or default to `/workspace`),
+  and the server persists the provider's realized cwd for later syncs.
 
 The Codex sandbox runtime is separate and remains the official Paperclip image.
 The server image is published to
@@ -22,8 +23,9 @@ Pop-Location
 ```
 
 The Dockerfile pins the official Paperclip base image by its immutable release
-version. It patches the matching upstream TypeScript source, rebuilds the server
-runtime bundle, and fails the build if the fix is absent from the output.
+version. It patches the matching upstream TypeScript sources, rebuilds the
+Kubernetes provider and server runtime bundle without rebuilding the unrelated
+Rust Runner, and fails the build if either fix is absent from the output.
 
 The image repository's Release Please and publish-image workflows publish
 versioned tags and advance aliases using the same process as the other images.
