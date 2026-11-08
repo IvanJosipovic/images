@@ -7,7 +7,7 @@ USER root
 # Install the SDK pinned by KubeUI's global.json in the sandbox image. Sandbox
 # workspace provisioning only transfers files; it does not run provisionCommand.
 ARG DOTNET_SDK_VERSION=11.0.100-rc.3.26522.148
-ENV DOTNET_ROOT=/usr/share/dotnet
+ENV DOTNET_ROOT=/home/paperclip/.dotnet
 ENV PATH="${DOTNET_ROOT}:${PATH}"
 
 # .NET SDK globalization requires ICU at runtime.
@@ -19,6 +19,7 @@ RUN apt-get update && \
 RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && \
     bash /tmp/dotnet-install.sh --version "${DOTNET_SDK_VERSION}" --install-dir "${DOTNET_ROOT}" --no-path && \
     rm /tmp/dotnet-install.sh && \
+    chown -R 1000:1000 "${DOTNET_ROOT}" && \
     test "$(dotnet --version)" = "${DOTNET_SDK_VERSION}"
 
 # Trust the mounted workspace even when its owner differs from the runtime user.
