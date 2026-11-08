@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.2.2...paperclip-base-v0.2.3) (2026-11-08)
+
+
+### Bug Fixes
+
+* **paperclip-base:** include ICU for .NET SDK ([#123](https://github.com/IvanJosipovic/images/issues/123)) ([44ae5b7](https://github.com/IvanJosipovic/images/commit/44ae5b7babba043621d42b63c2775b7186302980))
+
 ## [0.2.2](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.2.1...paperclip-base-v0.2.2) (2026-11-08)
 
 
