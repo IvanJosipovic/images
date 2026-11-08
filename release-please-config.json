@@ -9,6 +9,10 @@
     "images/coder-rea": {
       "release-type": "simple",
       "component": "coder-rea"
+    },
+    "images/paperclip-k8s": {
+      "release-type": "simple",
+      "component": "paperclip-k8s"
     }
   }
 }
