@@ -9,6 +9,7 @@ Container Registry (GHCR). Each image is maintained and released independently.
 | --- | --- | --- |
 | `coder-dotnet` | Coder Ubuntu image with the latest .NET SDK and developer tools | `ghcr.io/ivanjosipovic/images/coder-dotnet` |
 | `coder-rea` | Coder Ubuntu image with REA and open-source reverse-engineering tools | `ghcr.io/ivanjosipovic/images/coder-rea` |
+| `paperclip-base` | Paperclip sandbox base with Codex, Claude, Copilot, and OpenCode CLIs | `ghcr.io/ivanjosipovic/images/paperclip-base` |
 
 Image sources live under `images/<image-name>/`. See
 [images/coder-dotnet/README.md](images/coder-dotnet/README.md) and
