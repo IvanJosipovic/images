@@ -4,6 +4,12 @@ FROM ghcr.io/paperclipai/agent-runtime-base:${PAPERCLIP_BASE_VERSION}
 
 USER root
 
+# .NET SDKs installed by workspace provisioning require ICU for globalization.
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libicu70 && \
+    rm -rf /var/lib/apt/lists/* && \
+    ldconfig -p | grep -F 'libicuuc.so.70'
+
 # Trust the mounted workspace even when its owner differs from the runtime user.
 RUN git config --system --add safe.directory /workspace && \
     git config --system --get-all safe.directory | grep -Fxq /workspace
