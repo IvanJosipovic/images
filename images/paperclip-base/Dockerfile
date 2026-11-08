@@ -4,6 +4,10 @@ FROM ghcr.io/paperclipai/agent-runtime-base:${PAPERCLIP_BASE_VERSION}
 
 USER root
 
+# Trust the mounted workspace even when its owner differs from the runtime user.
+RUN git config --system --add safe.directory /workspace && \
+    git config --system --get-all safe.directory | grep -Fxq /workspace
+
 # renovate: datasource=npm depName=npm
 ARG NPM_VERSION=12.2.2
 
