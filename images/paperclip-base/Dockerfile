@@ -4,11 +4,22 @@ FROM ghcr.io/paperclipai/agent-runtime-base:${PAPERCLIP_BASE_VERSION}
 
 USER root
 
-# .NET SDKs installed by workspace provisioning require ICU for globalization.
+# Install the SDK pinned by KubeUI's global.json in the sandbox image. Sandbox
+# workspace provisioning only transfers files; it does not run provisionCommand.
+ARG DOTNET_SDK_VERSION=11.0.100-rc.3.26522.148
+ENV DOTNET_ROOT=/usr/share/dotnet
+ENV PATH="${DOTNET_ROOT}:${PATH}"
+
+# .NET SDK globalization requires ICU at runtime.
 RUN apt-get update && \
     apt-get install -y --no-install-recommends libicu70 && \
     rm -rf /var/lib/apt/lists/* && \
     ldconfig -p | grep -F 'libicuuc.so.70'
+
+RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && \
+    bash /tmp/dotnet-install.sh --version "${DOTNET_SDK_VERSION}" --install-dir "${DOTNET_ROOT}" --no-path && \
+    rm /tmp/dotnet-install.sh && \
+    test "$(dotnet --version)" = "${DOTNET_SDK_VERSION}"
 
 # Trust the mounted workspace even when its owner differs from the runtime user.
 RUN git config --system --add safe.directory /workspace && \
@@ -45,13 +56,14 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
 USER 1000:1000
 
 RUN set -eu; \
-    for command in node npm codex claude copilot opencode; do \
+    for command in node npm dotnet codex claude copilot opencode; do \
         command -v "$command"; \
     done; \
+    test "$(dotnet --version)" = "${DOTNET_SDK_VERSION}"; \
     codex --version; \
     claude --version; \
     copilot --version; \
     opencode --version
 
 LABEL org.opencontainers.image.title="Paperclip agent runtime base" \
-      org.opencontainers.image.description="Official Paperclip agent runtime base with Renovate-managed Codex, Claude, Copilot, and OpenCode CLIs"
+      org.opencontainers.image.description="Paperclip runtime base with pinned .NET SDK and Codex, Claude, Copilot, and OpenCode CLIs"
