@@ -1,7 +1,7 @@
 # Paperclip Kubernetes image
 
-This image extends the official Paperclip server image with GitHub CLI and both
-sides of the Kubernetes native file-sync lease fix:
+This image extends the official Paperclip server image with both sides of the
+Kubernetes native file-sync lease fix:
 
 - Fresh leases start with `/workspace`, so managed assets can sync before the
   server realizes a workspace.
