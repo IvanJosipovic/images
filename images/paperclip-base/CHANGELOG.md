@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.2.3...paperclip-base-v0.3.0) (2026-11-09)
+
+
+### Features
+
+* **paperclip-base:** bundle pinned .NET SDK ([#125](https://github.com/IvanJosipovic/images/issues/125)) ([a105eb8](https://github.com/IvanJosipovic/images/commit/a105eb8f2aff75fb6d8ff3187203f5b25344b52e))
+
 ## [0.2.3](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.2.2...paperclip-base-v0.2.3) (2026-11-08)
 
 
