@@ -6,7 +6,7 @@ USER root
 
 # .NET SDKs installed by workspace provisioning require ICU for globalization.
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends libicu70 && \
+    apt-get install -y --no-install-recommends gh libicu70 && \
     rm -rf /var/lib/apt/lists/* && \
     ldconfig -p | grep -F 'libicuuc.so.70'
 
@@ -45,7 +45,7 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
 USER 1000:1000
 
 RUN set -eu; \
-    for command in node npm codex claude copilot opencode; do \
+    for command in node npm gh codex claude copilot opencode; do \
         command -v "$command"; \
     done; \
     codex --version; \
@@ -54,4 +54,4 @@ RUN set -eu; \
     opencode --version
 
 LABEL org.opencontainers.image.title="Paperclip agent runtime base" \
-      org.opencontainers.image.description="Official Paperclip agent runtime base with Renovate-managed Codex, Claude, Copilot, and OpenCode CLIs"
+      org.opencontainers.image.description="Official Paperclip agent runtime base with GitHub CLI and Renovate-managed Codex, Claude, Copilot, and OpenCode CLIs"

@@ -1,5 +1,11 @@
 FROM ghcr.io/paperclipai/paperclip:2026.1106.0
 
+USER root
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gh \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 # Seed the Kubernetes lease sync root before realization, and persist the
@@ -8,6 +14,7 @@ COPY patch-kubernetes-lease.mjs /tmp/patch-kubernetes-lease.mjs
 COPY patch-environment-run-orchestrator.mjs /tmp/patch-environment-run-orchestrator.mjs
 
 RUN node /tmp/patch-kubernetes-lease.mjs \
+    && command -v gh \
     && node /tmp/patch-environment-run-orchestrator.mjs \
     && pnpm --dir /app/packages/plugins/sandbox-providers/kubernetes install \
       --ignore-workspace --prod=false --ignore-scripts --no-frozen-lockfile \
@@ -27,4 +34,4 @@ RUN node /tmp/patch-kubernetes-lease.mjs \
     && rm /tmp/patch-kubernetes-lease.mjs /tmp/patch-environment-run-orchestrator.mjs
 
 LABEL org.opencontainers.image.title="Paperclip Kubernetes workspace fix" \
-      org.opencontainers.image.description="Paperclip server and Kubernetes provider with pre-realization /workspace sync root and realized remoteCwd lease persistence"
+      org.opencontainers.image.description="Paperclip server with GitHub CLI and Kubernetes provider with pre-realization /workspace sync root and realized remoteCwd lease persistence"

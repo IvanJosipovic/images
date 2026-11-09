@@ -23,6 +23,7 @@ RUN apt-get update && \
         e2fsprogs \
         file \
         gdb \
+        gh \
         git \
         gawk \
         gnupg \
@@ -229,7 +230,7 @@ RUN --mount=type=secret,id=github_token,required=false \
 USER coder
 
 RUN set -eu; \
-    for command in rea node npm java ghidraRun analyzeHeadless binwalk unblob frida frida-ps frida-trace jadx apktool bundletool ipsw tshark prlimit adb sigrok-cli wasm-validate; do \
+    for command in rea node npm java gh ghidraRun analyzeHeadless binwalk unblob frida frida-ps frida-trace jadx apktool bundletool ipsw tshark prlimit adb sigrok-cli wasm-validate; do \
         command -v "$command"; \
     done; \
     if [ "$(dpkg --print-architecture)" = amd64 ]; then command -v google-chrome-stable; fi; \
@@ -243,4 +244,4 @@ RUN set -eu; \
     ipsw version >/dev/null
 
 LABEL org.opencontainers.image.title="Coder REA image" \
-      org.opencontainers.image.description="Coder Ubuntu base with REA, Ghidra, Android and Apple analysis tools, firmware tools, Chrome, and agent CLIs"
+      org.opencontainers.image.description="Coder Ubuntu base with REA, GitHub CLI, Ghidra, Android and Apple analysis tools, firmware tools, Chrome, and agent CLIs"
