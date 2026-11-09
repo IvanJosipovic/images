@@ -7,10 +7,12 @@ tag. Renovate tracks npm and all four CLI package versions in the Dockerfile.
 
 The official base runtime contract is preserved: the image runs as UID/GID
 1000, uses `/workspace`, and retains the Tini entrypoint and
-`paperclip-agent-shim` command. The CLI packages are installed as root and
-made accessible to the unprivileged Paperclip user. No Paperclip credentials
-or instance settings are baked in. ICU is included for .NET SDKs installed by
-workspace provisioning commands.
+`paperclip-agent-shim` command. The CLI packages and the .NET SDK pinned by
+KubeUI's `global.json` are installed as root and made accessible to the
+unprivileged Paperclip user. Keeping the SDK in the image is required because
+the Kubernetes sandbox adapter stages workspace files but does not run
+workspace `provisionCommand`s. No Paperclip credentials or instance settings
+are baked in.
 
 The image is published to `ghcr.io/ivanjosipovic/images/paperclip-base`.
 
