@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.16](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.15...coder-dotnet-v0.7.16) (2026-11-09)
+
+
+### Bug Fixes
+
+* **deps:** update codercom/enterprise-base:ubuntu docker digest to 0850a3f ([#129](https://github.com/IvanJosipovic/images/issues/129)) ([9f7eb07](https://github.com/IvanJosipovic/images/commit/9f7eb0736726db209e71724b127a495c3b825045))
+
 ## [0.7.15](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.14...coder-dotnet-v0.7.15) (2026-11-07)
 
 
