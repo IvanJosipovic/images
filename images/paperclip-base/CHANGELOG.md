@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.3.1...paperclip-base-v0.3.2) (2026-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @opencode/cli to v2.2.7 ([#136](https://github.com/IvanJosipovic/images/issues/136)) ([06ec2fd](https://github.com/IvanJosipovic/images/commit/06ec2fd610ea10f93e1607cbdc0e001af07c5098))
+
 ## [0.3.1](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.3.0...paperclip-base-v0.3.1) (2026-11-10)
 
 
