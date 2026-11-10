@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.19](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.18...coder-dotnet-v0.7.19) (2026-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.109 ([#138](https://github.com/IvanJosipovic/images/issues/138)) ([4ee1724](https://github.com/IvanJosipovic/images/commit/4ee1724dc058951a81b65c90ea240116d0955651))
+* **deps:** update dependency powershell/powershell to v7.7.0 ([#140](https://github.com/IvanJosipovic/images/issues/140)) ([a252831](https://github.com/IvanJosipovic/images/commit/a252831cccfb18c4d21eab855d2bebaff52c88f4))
+
 ## [0.7.18](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.17...coder-dotnet-v0.7.18) (2026-11-10)
 
 
