@@ -110,7 +110,7 @@ ARG OPENCODE_VERSION=2.2.7
 ARG CODEX_CLI_VERSION=0.167.0
 
 # renovate: datasource=npm depName=@github/copilot
-ARG COPILOT_CLI_VERSION=1.0.108
+ARG COPILOT_CLI_VERSION=1.0.109
 
 # renovate: datasource=npm depName=@anthropic-ai/claude-code
 ARG CLAUDE_CLI_VERSION=2.1.322
