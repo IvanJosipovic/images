@@ -151,7 +151,7 @@ ENV PATH="/usr/local/bin:/opt/ghidra:/opt/ghidra/support:/usr/lib/jvm/java-21-op
 ARG UNBLOB_VERSION=26.6.4
 
 # renovate: datasource=pypi depName=frida-tools
-ARG FRIDA_TOOLS_VERSION=14.13.0
+ARG FRIDA_TOOLS_VERSION=14.13.1
 
 RUN python3 -m venv /opt/rea-tools && \
     /opt/rea-tools/bin/pip install --no-cache-dir \
