@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.18](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.17...coder-dotnet-v0.7.18) (2026-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @opencode/cli to v2.2.7 ([#136](https://github.com/IvanJosipovic/images/issues/136)) ([06ec2fd](https://github.com/IvanJosipovic/images/commit/06ec2fd610ea10f93e1607cbdc0e001af07c5098))
+
 ## [0.7.17](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.16...coder-dotnet-v0.7.17) (2026-11-10)
 
 
