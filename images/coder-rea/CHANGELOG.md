@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.9](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.8...coder-rea-v0.3.9) (2026-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.108 ([#131](https://github.com/IvanJosipovic/images/issues/131)) ([07fc8f8](https://github.com/IvanJosipovic/images/commit/07fc8f8a8329b9bc7c712366dbd4994a105e1e07))
+* **deps:** update dependency frida-tools to v14.13.1 ([#134](https://github.com/IvanJosipovic/images/issues/134)) ([258d474](https://github.com/IvanJosipovic/images/commit/258d474d7abc7025b73d132d0524e227bf930207))
+
 ## [0.3.8](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.7...coder-rea-v0.3.8) (2026-11-09)
 
 
