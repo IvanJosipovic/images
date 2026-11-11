@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.13](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.12...coder-rea-v0.3.13) (2026-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.167.2 ([#144](https://github.com/IvanJosipovic/images/issues/144)) ([42d88d9](https://github.com/IvanJosipovic/images/commit/42d88d9d33241174c5ae6456f4a0e0362462919c))
+* **deps:** update node.js to v24.22.3 ([#146](https://github.com/IvanJosipovic/images/issues/146)) ([d918970](https://github.com/IvanJosipovic/images/commit/d918970c28167a59ad5977df4a2c88a17f53099d))
+
 ## [0.3.12](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.11...coder-rea-v0.3.12) (2026-11-11)
 
 

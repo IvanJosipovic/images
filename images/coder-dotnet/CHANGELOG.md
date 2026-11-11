@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.7.21](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.20...coder-dotnet-v0.7.21) (2026-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.167.2 ([#144](https://github.com/IvanJosipovic/images/issues/144)) ([42d88d9](https://github.com/IvanJosipovic/images/commit/42d88d9d33241174c5ae6456f4a0e0362462919c))
+* **deps:** update dependency microsoft/apm to v0.35.1 ([#145](https://github.com/IvanJosipovic/images/issues/145)) ([c0fcfc3](https://github.com/IvanJosipovic/images/commit/c0fcfc35153f2e2aed659ef2bf31553911205829))
+* **deps:** update node.js to v24.22.3 ([#146](https://github.com/IvanJosipovic/images/issues/146)) ([d918970](https://github.com/IvanJosipovic/images/commit/d918970c28167a59ad5977df4a2c88a17f53099d))
+
 ## [0.7.20](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.19...coder-dotnet-v0.7.20) (2026-11-11)
 
 
