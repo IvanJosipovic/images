@@ -33,7 +33,7 @@ ARG NPM_VERSION=12.2.2
 ARG OPENCODE_VERSION=2.2.7
 
 # renovate: datasource=npm depName=@openai/codex
-ARG CODEX_CLI_VERSION=0.167.1
+ARG CODEX_CLI_VERSION=0.167.2
 
 # renovate: datasource=npm depName=@github/copilot
 ARG COPILOT_CLI_VERSION=1.0.109
