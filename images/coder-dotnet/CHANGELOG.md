@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.20](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.19...coder-dotnet-v0.7.20) (2026-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.167.1 ([#142](https://github.com/IvanJosipovic/images/issues/142)) ([abf4bc0](https://github.com/IvanJosipovic/images/commit/abf4bc02db26997559189e61715a9f20bc72221b))
+
 ## [0.7.19](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.18...coder-dotnet-v0.7.19) (2026-11-10)
 
 
