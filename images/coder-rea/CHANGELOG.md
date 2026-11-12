@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.14](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.13...coder-rea-v0.3.14) (2026-11-12)
+
+
+### Bug Fixes
+
+* **deps:** update codercom/enterprise-base:ubuntu docker digest to 071363e ([#148](https://github.com/IvanJosipovic/images/issues/148)) ([b157828](https://github.com/IvanJosipovic/images/commit/b157828b46b10d30b274360837dd6d3944ec7db7))
+* **deps:** update dependency rust-lang/rust to v1.100.0 ([#150](https://github.com/IvanJosipovic/images/issues/150)) ([16a0399](https://github.com/IvanJosipovic/images/commit/16a0399fa7c2f50279d70644c8d5fe5a32851dcb))
+
 ## [0.3.13](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.12...coder-rea-v0.3.13) (2026-11-11)
 
 
