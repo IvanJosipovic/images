@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.23](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.22...coder-dotnet-v0.7.23) (2026-11-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.168.0 ([#154](https://github.com/IvanJosipovic/images/issues/154)) ([e1c4c75](https://github.com/IvanJosipovic/images/commit/e1c4c7576b278ecc4ec5a643bddc52c64e0afdeb))
+
 ## [0.7.22](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.21...coder-dotnet-v0.7.22) (2026-11-12)
 
 
