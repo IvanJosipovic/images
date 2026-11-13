@@ -88,7 +88,7 @@ ARG OPENCODE_VERSION=2.2.7
 ARG CODEX_CLI_VERSION=0.168.0
 
 # renovate: datasource=npm depName=@github/copilot
-ARG COPILOT_CLI_VERSION=1.0.109
+ARG COPILOT_CLI_VERSION=1.0.110
 
 RUN node_version="${NODE_VERSION#v}" && \
     apt-get update && \
