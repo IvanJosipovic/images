@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.7](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.3.6...paperclip-base-v0.3.7) (2026-11-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @anthropic-ai/claude-code to v2.1.323 ([#152](https://github.com/IvanJosipovic/images/issues/152)) ([fbd1b3c](https://github.com/IvanJosipovic/images/commit/fbd1b3c92d641d695f8ce120845951372ef36a90))
+* **deps:** update dependency @github/copilot to v1.0.110 ([#153](https://github.com/IvanJosipovic/images/issues/153)) ([dbd0df0](https://github.com/IvanJosipovic/images/commit/dbd0df04ff27cbc298b5134b235835b31a73d819))
+
 ## [0.3.6](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.3.5...paperclip-base-v0.3.6) (2026-11-13)
 
 
