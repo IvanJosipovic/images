@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.8](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.3.7...paperclip-base-v0.3.8) (2026-11-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.169.0 ([#157](https://github.com/IvanJosipovic/images/issues/157)) ([6f3fc35](https://github.com/IvanJosipovic/images/commit/6f3fc358e4d219c5b746126bcb5bc4517466b968))
+* **deps:** update dependency @opencode/cli to v2.3.0 ([#158](https://github.com/IvanJosipovic/images/issues/158)) ([4387a89](https://github.com/IvanJosipovic/images/commit/4387a89e08867d63cd9c709621009abf8b3f55d7))
+
 ## [0.3.7](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.3.6...paperclip-base-v0.3.7) (2026-11-13)
 
 
