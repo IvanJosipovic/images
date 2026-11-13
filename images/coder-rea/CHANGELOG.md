@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.18](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.17...coder-rea-v0.3.18) (2026-11-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.111 ([#160](https://github.com/IvanJosipovic/images/issues/160)) ([e8abb0f](https://github.com/IvanJosipovic/images/commit/e8abb0fbb45269d01aa269ef4f5356bc8a8a9113))
+
 ## [0.3.17](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.16...coder-rea-v0.3.17) (2026-11-13)
 
 
