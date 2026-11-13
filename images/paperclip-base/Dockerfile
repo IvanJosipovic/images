@@ -30,7 +30,7 @@ RUN git config --system --add safe.directory /workspace && \
 ARG NPM_VERSION=12.2.2
 
 # renovate: datasource=npm depName=@opencode/cli
-ARG OPENCODE_VERSION=2.2.7
+ARG OPENCODE_VERSION=2.3.0
 
 # renovate: datasource=npm depName=@openai/codex
 ARG CODEX_CLI_VERSION=0.168.0
