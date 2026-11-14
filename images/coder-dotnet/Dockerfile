@@ -14,6 +14,7 @@ RUN apt-get update && \
         ca-certificates \
         curl \
         gdb \
+        gh \
         gnupg \
         lldb \
         libfontconfig1 \
@@ -134,9 +135,9 @@ RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --pr
 USER coder
 
 RUN set -eu; \
-    for command in bwrap dotnet dotnet-stack dotnet-dump gdb lldb netcoredbg pwsh powershell node npm yarn apm opencode codex copilot claude; do \
+    for command in bwrap dotnet dotnet-stack dotnet-dump gdb gh lldb netcoredbg pwsh powershell node npm yarn apm opencode codex copilot claude; do \
         command -v "$command"; \
     done
 
 LABEL org.opencontainers.image.title="Coder .NET base image" \
-      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK and diagnostics, GDB, LLDB, NetCoreDbg, PowerShell, Node.js LTS, npm, Yarn, Agent Package Manager, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
+      org.opencontainers.image.description="Coder Ubuntu base with .NET SDK and diagnostics, GitHub CLI, GDB, LLDB, NetCoreDbg, PowerShell, Node.js LTS, npm, Yarn, Agent Package Manager, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"

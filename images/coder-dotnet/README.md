@@ -3,8 +3,8 @@
 This image extends the pinned `codercom/enterprise-base:ubuntu` image and
 installs the latest .NET 11 SDK and the `dotnet-stack` and `dotnet-dump`
 diagnostic tools, GDB, LLDB, NetCoreDbg, PowerShell, Node.js LTS, npm, Yarn,
-Microsoft Agent Package Manager, OpenCode, Codex CLI, GitHub Copilot CLI, and
-Bubblewrap for Codex CLI sandboxing. Tool versions are pinned in the Dockerfile
+Microsoft Agent Package Manager, GitHub CLI, OpenCode, Codex CLI, GitHub Copilot
+CLI, and Bubblewrap for Codex CLI sandboxing. Tool versions are pinned in the Dockerfile
 and updated by Renovate. Package installation is performed as root; the final
 image runs as the existing `coder` user. All installed commands are on `PATH`.
 
@@ -30,7 +30,7 @@ docker build .
 ## Use the image
 
 ```sh
-docker run --rm --entrypoint bash ghcr.io/ivanjosipovic/images/coder-dotnet:latest -lc 'whoami && bwrap --version && dotnet --info && dotnet-stack --version && dotnet-dump --version && gdb --version && lldb --version && netcoredbg --version && pwsh --version && node --version && npm --version && yarn --version && apm --version && opencode --version && codex --version && copilot --version'
+docker run --rm --entrypoint bash ghcr.io/ivanjosipovic/images/coder-dotnet:latest -lc 'whoami && bwrap --version && dotnet --info && dotnet-stack --version && dotnet-dump --version && gdb --version && gh --version && lldb --version && netcoredbg --version && pwsh --version && node --version && npm --version && yarn --version && apm --version && opencode --version && codex --version && copilot --version'
 ```
 
 The container starts as user `coder`. Mount a project directory at the

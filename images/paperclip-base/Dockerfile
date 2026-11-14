@@ -12,7 +12,7 @@ ENV PATH="${DOTNET_ROOT}:${PATH}"
 
 # .NET SDK globalization requires ICU at runtime.
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends libicu70 && \
+    apt-get install -y --no-install-recommends gh libicu70 && \
     rm -rf /var/lib/apt/lists/* && \
     ldconfig -p | grep -F 'libicuuc.so.70'
 
@@ -57,7 +57,7 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
 USER 1000:1000
 
 RUN set -eu; \
-    for command in node npm dotnet codex claude copilot opencode; do \
+    for command in node npm gh dotnet codex claude copilot opencode; do \
         command -v "$command"; \
     done; \
     test "$(dotnet --version)" = "${DOTNET_SDK_VERSION}"; \
@@ -67,4 +67,4 @@ RUN set -eu; \
     opencode --version
 
 LABEL org.opencontainers.image.title="Paperclip agent runtime base" \
-      org.opencontainers.image.description="Paperclip runtime base with pinned .NET SDK and Codex, Claude, Copilot, and OpenCode CLIs"
+      org.opencontainers.image.description="Paperclip runtime base with GitHub CLI, pinned .NET SDK, and Codex, Claude, Copilot, and OpenCode CLIs"
