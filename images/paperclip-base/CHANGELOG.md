@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.3.11...paperclip-base-v0.4.0) (2026-11-14)
+
+
+### Features
+
+* **images:** add GitHub CLI to all images ([#128](https://github.com/IvanJosipovic/images/issues/128)) ([da66f5c](https://github.com/IvanJosipovic/images/commit/da66f5c1cc5ffd59ec35a6940720991e6604f338))
+
 ## [0.3.11](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.3.10...paperclip-base-v0.3.11) (2026-11-14)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.29...coder-dotnet-v0.8.0) (2026-11-14)
+
+
+### Features
+
+* **images:** add GitHub CLI to all images ([#128](https://github.com/IvanJosipovic/images/issues/128)) ([da66f5c](https://github.com/IvanJosipovic/images/commit/da66f5c1cc5ffd59ec35a6940720991e6604f338))
+
 ## [0.7.29](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.28...coder-dotnet-v0.7.29) (2026-11-14)
 
 
