@@ -1,4 +1,4 @@
-FROM codercom/enterprise-base:ubuntu@sha256:1846470f7fddd8d12d8cb70815c8bd72352ddff9850aa56ab7b82f00f47d3e0a
+FROM codercom/enterprise-base:ubuntu@sha256:071363ed355e0a18a0a059989516a44dac18d6bce6b4292b77dc38b85456ef32
 
 USER root
 
@@ -32,7 +32,7 @@ RUN mkdir -p /usr/share/keyrings && \
     curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
 
 # renovate: datasource=node-version depName=node
-ARG NODE_VERSION=24.22.2
+ARG NODE_VERSION=24.22.3
 
 # renovate: datasource=npm depName=yarn
 ARG YARN_VERSION=1.22.22
@@ -45,7 +45,7 @@ RUN node_version="${NODE_VERSION#v}" && \
     rm -rf /var/lib/apt/lists/*
 
 # renovate: datasource=github-releases depName=PowerShell/PowerShell
-ARG POWERSHELL_VERSION=7.6.9
+ARG POWERSHELL_VERSION=7.7.0
 
 RUN set -eux; \
     architecture="$(dpkg --print-architecture)"; \
@@ -63,7 +63,7 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/*
 
 # renovate: datasource=dotnet-version depName=dotnet-sdk versioning=dotnet
-ARG DOTNET_SDK_VERSION=11.0.100-rc.3.26522.148
+ARG DOTNET_SDK_VERSION=11.0.100
 
 RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && \
     bash /tmp/dotnet-install.sh \
@@ -105,16 +105,16 @@ RUN set -eux; \
 ARG NPM_VERSION=12.2.2
 
 # renovate: datasource=npm depName=@opencode/cli
-ARG OPENCODE_VERSION=2.2.6
+ARG OPENCODE_VERSION=2.3.0
 
 # renovate: datasource=npm depName=@openai/codex
-ARG CODEX_CLI_VERSION=0.167.0
+ARG CODEX_CLI_VERSION=0.169.0
 
 # renovate: datasource=npm depName=@github/copilot
-ARG COPILOT_CLI_VERSION=1.0.107
+ARG COPILOT_CLI_VERSION=1.0.112
 
 # renovate: datasource=npm depName=@anthropic-ai/claude-code
-ARG CLAUDE_CLI_VERSION=2.1.319
+ARG CLAUDE_CLI_VERSION=2.1.325
 
 RUN npm install --global "npm@${NPM_VERSION}" && \
     npm install --global \
@@ -127,7 +127,7 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
     npm cache clean --force
 
 # renovate: datasource=github-releases depName=microsoft/apm
-ARG APM_VERSION=0.35.0
+ARG APM_VERSION=0.35.1
 
 RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --prefix /usr/local && \
     chmod -R a+rX /usr/local/lib/apm

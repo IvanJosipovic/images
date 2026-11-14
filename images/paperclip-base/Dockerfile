@@ -30,16 +30,16 @@ RUN git config --system --add safe.directory /workspace && \
 ARG NPM_VERSION=12.2.2
 
 # renovate: datasource=npm depName=@opencode/cli
-ARG OPENCODE_VERSION=2.2.6
+ARG OPENCODE_VERSION=2.3.0
 
 # renovate: datasource=npm depName=@openai/codex
-ARG CODEX_CLI_VERSION=0.167.0
+ARG CODEX_CLI_VERSION=0.169.0
 
 # renovate: datasource=npm depName=@github/copilot
-ARG COPILOT_CLI_VERSION=1.0.107
+ARG COPILOT_CLI_VERSION=1.0.112
 
 # renovate: datasource=npm depName=@anthropic-ai/claude-code
-ARG CLAUDE_CLI_VERSION=2.1.319
+ARG CLAUDE_CLI_VERSION=2.1.325
 
 RUN npm install --global "npm@${NPM_VERSION}" && \
     npm install --global \

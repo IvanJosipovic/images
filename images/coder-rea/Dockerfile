@@ -1,4 +1,4 @@
-FROM codercom/enterprise-base:ubuntu@sha256:1846470f7fddd8d12d8cb70815c8bd72352ddff9850aa56ab7b82f00f47d3e0a
+FROM codercom/enterprise-base:ubuntu@sha256:071363ed355e0a18a0a059989516a44dac18d6bce6b4292b77dc38b85456ef32
 
 USER root
 
@@ -74,22 +74,22 @@ RUN mkdir -p /usr/share/keyrings && \
     echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_24.x nodistro main" > /etc/apt/sources.list.d/nodesource.list
 
 # renovate: datasource=node-version depName=node
-ARG NODE_VERSION=24.22.2
+ARG NODE_VERSION=24.22.3
 
 # renovate: datasource=npm depName=npm
 ARG NPM_VERSION=12.2.2
 
 # renovate: datasource=npm depName=rea-agents
-ARG REA_AGENTS_VERSION=6.8.0
+ARG REA_AGENTS_VERSION=6.9.0
 
 # renovate: datasource=npm depName=@opencode/cli
-ARG OPENCODE_VERSION=2.2.6
+ARG OPENCODE_VERSION=2.3.0
 
 # renovate: datasource=npm depName=@openai/codex
-ARG CODEX_CLI_VERSION=0.167.0
+ARG CODEX_CLI_VERSION=0.169.0
 
 # renovate: datasource=npm depName=@github/copilot
-ARG COPILOT_CLI_VERSION=1.0.107
+ARG COPILOT_CLI_VERSION=1.0.112
 
 RUN node_version="${NODE_VERSION#v}" && \
     apt-get update && \
@@ -132,7 +132,7 @@ RUN --mount=type=secret,id=github_token,required=false \
     rm -rf /tmp/ghidra.zip /opt/ghidra-unpacked
 
 # renovate: datasource=github-releases depName=rust-lang/rust
-ARG RUST_VERSION=1.99.1
+ARG RUST_VERSION=1.100.0
 
 RUN curl -fsSL https://sh.rustup.rs -o /tmp/rustup-init.sh && \
     sh /tmp/rustup-init.sh -y --profile minimal --default-toolchain "$RUST_VERSION" && \
@@ -152,7 +152,7 @@ ENV PATH="/usr/local/bin:/opt/ghidra:/opt/ghidra/support:/usr/lib/jvm/java-21-op
 ARG UNBLOB_VERSION=26.6.4
 
 # renovate: datasource=pypi depName=frida-tools
-ARG FRIDA_TOOLS_VERSION=14.13.0
+ARG FRIDA_TOOLS_VERSION=14.13.1
 
 RUN python3 -m venv /opt/rea-tools && \
     /opt/rea-tools/bin/pip install --no-cache-dir \
@@ -170,7 +170,7 @@ ARG APKTOOL_VERSION=3.0.3
 ARG BUNDLETOOL_VERSION=1.18.3
 
 # renovate: datasource=github-releases depName=blacktop/ipsw
-ARG IPSW_VERSION=3.1.743
+ARG IPSW_VERSION=3.1.745
 
 # renovate: datasource=github-releases depName=skylot/jadx
 ARG JADX_CLI_VERSION=1.5.6

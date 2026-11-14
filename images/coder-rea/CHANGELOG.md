@@ -1,5 +1,94 @@
 # Changelog
 
+## [0.3.19](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.18...coder-rea-v0.3.19) (2026-11-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.112 ([#164](https://github.com/IvanJosipovic/images/issues/164)) ([1758e34](https://github.com/IvanJosipovic/images/commit/1758e34ec6b1cded6b50b741921c462f56db168c))
+
+## [0.3.18](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.17...coder-rea-v0.3.18) (2026-11-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.111 ([#160](https://github.com/IvanJosipovic/images/issues/160)) ([e8abb0f](https://github.com/IvanJosipovic/images/commit/e8abb0fbb45269d01aa269ef4f5356bc8a8a9113))
+
+## [0.3.17](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.16...coder-rea-v0.3.17) (2026-11-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.169.0 ([#157](https://github.com/IvanJosipovic/images/issues/157)) ([6f3fc35](https://github.com/IvanJosipovic/images/commit/6f3fc358e4d219c5b746126bcb5bc4517466b968))
+* **deps:** update dependency @opencode/cli to v2.3.0 ([#158](https://github.com/IvanJosipovic/images/issues/158)) ([4387a89](https://github.com/IvanJosipovic/images/commit/4387a89e08867d63cd9c709621009abf8b3f55d7))
+
+## [0.3.16](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.15...coder-rea-v0.3.16) (2026-11-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.110 ([#153](https://github.com/IvanJosipovic/images/issues/153)) ([dbd0df0](https://github.com/IvanJosipovic/images/commit/dbd0df04ff27cbc298b5134b235835b31a73d819))
+
+## [0.3.15](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.14...coder-rea-v0.3.15) (2026-11-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.168.0 ([#154](https://github.com/IvanJosipovic/images/issues/154)) ([e1c4c75](https://github.com/IvanJosipovic/images/commit/e1c4c7576b278ecc4ec5a643bddc52c64e0afdeb))
+
+## [0.3.14](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.13...coder-rea-v0.3.14) (2026-11-12)
+
+
+### Bug Fixes
+
+* **deps:** update codercom/enterprise-base:ubuntu docker digest to 071363e ([#148](https://github.com/IvanJosipovic/images/issues/148)) ([b157828](https://github.com/IvanJosipovic/images/commit/b157828b46b10d30b274360837dd6d3944ec7db7))
+* **deps:** update dependency rust-lang/rust to v1.100.0 ([#150](https://github.com/IvanJosipovic/images/issues/150)) ([16a0399](https://github.com/IvanJosipovic/images/commit/16a0399fa7c2f50279d70644c8d5fe5a32851dcb))
+
+## [0.3.13](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.12...coder-rea-v0.3.13) (2026-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.167.2 ([#144](https://github.com/IvanJosipovic/images/issues/144)) ([42d88d9](https://github.com/IvanJosipovic/images/commit/42d88d9d33241174c5ae6456f4a0e0362462919c))
+* **deps:** update node.js to v24.22.3 ([#146](https://github.com/IvanJosipovic/images/issues/146)) ([d918970](https://github.com/IvanJosipovic/images/commit/d918970c28167a59ad5977df4a2c88a17f53099d))
+
+## [0.3.12](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.11...coder-rea-v0.3.12) (2026-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.167.1 ([#142](https://github.com/IvanJosipovic/images/issues/142)) ([abf4bc0](https://github.com/IvanJosipovic/images/commit/abf4bc02db26997559189e61715a9f20bc72221b))
+
+## [0.3.11](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.10...coder-rea-v0.3.11) (2026-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.109 ([#138](https://github.com/IvanJosipovic/images/issues/138)) ([4ee1724](https://github.com/IvanJosipovic/images/commit/4ee1724dc058951a81b65c90ea240116d0955651))
+* **deps:** update dependency blacktop/ipsw to v3.1.745 ([#139](https://github.com/IvanJosipovic/images/issues/139)) ([390823d](https://github.com/IvanJosipovic/images/commit/390823d4851aa7a3a552eba79c4780bf93d83484))
+
+## [0.3.10](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.9...coder-rea-v0.3.10) (2026-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @opencode/cli to v2.2.7 ([#136](https://github.com/IvanJosipovic/images/issues/136)) ([06ec2fd](https://github.com/IvanJosipovic/images/commit/06ec2fd610ea10f93e1607cbdc0e001af07c5098))
+
+## [0.3.9](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.8...coder-rea-v0.3.9) (2026-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.108 ([#131](https://github.com/IvanJosipovic/images/issues/131)) ([07fc8f8](https://github.com/IvanJosipovic/images/commit/07fc8f8a8329b9bc7c712366dbd4994a105e1e07))
+* **deps:** update dependency frida-tools to v14.13.1 ([#134](https://github.com/IvanJosipovic/images/issues/134)) ([258d474](https://github.com/IvanJosipovic/images/commit/258d474d7abc7025b73d132d0524e227bf930207))
+
+## [0.3.8](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.7...coder-rea-v0.3.8) (2026-11-09)
+
+
+### Bug Fixes
+
+* **deps:** update codercom/enterprise-base:ubuntu docker digest to 0850a3f ([#129](https://github.com/IvanJosipovic/images/issues/129)) ([9f7eb07](https://github.com/IvanJosipovic/images/commit/9f7eb0736726db209e71724b127a495c3b825045))
+
 ## [0.3.7](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.6...coder-rea-v0.3.7) (2026-11-07)
 
 
