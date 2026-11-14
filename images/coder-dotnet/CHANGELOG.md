@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.29](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.28...coder-dotnet-v0.7.29) (2026-11-14)
+
+
+### Bug Fixes
+
+* Update DOTNET_SDK_VERSION to 11.0.100 ([#166](https://github.com/IvanJosipovic/images/issues/166)) ([ceae7c0](https://github.com/IvanJosipovic/images/commit/ceae7c03a0f72b2a62f8dfa5ac7b388c143c5a38))
+
 ## [0.7.28](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.27...coder-dotnet-v0.7.28) (2026-11-14)
 
 
