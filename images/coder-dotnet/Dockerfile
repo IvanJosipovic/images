@@ -141,3 +141,4 @@ RUN set -eu; \
 
 LABEL org.opencontainers.image.title="Coder .NET base image" \
       org.opencontainers.image.description="Coder Ubuntu base with .NET SDK and diagnostics, GitHub CLI, GDB, LLDB, NetCoreDbg, PowerShell, Node.js LTS, npm, Yarn, Agent Package Manager, OpenCode, Codex CLI, Copilot CLI, and Claude Code CLI"
+
