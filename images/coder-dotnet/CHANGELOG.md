@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.0...coder-dotnet-v0.8.1) (2026-11-15)
+
+
+### Bug Fixes
+
+* trigger update ([#171](https://github.com/IvanJosipovic/images/issues/171)) ([88a5beb](https://github.com/IvanJosipovic/images/commit/88a5beba08790c1502023a1e90e55dfd880d8b85))
+
 ## [0.8.0](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.7.29...coder-dotnet-v0.8.0) (2026-11-14)
 
 
