@@ -131,7 +131,7 @@ jobs:
               return 0
             fi
 
-            if grep -Eqi 'manifest unknown|manifest.*not found|name unknown' "$pull_log"; then
+            if grep -Eqi 'manifest unknown|manifest.*not found|name unknown|failed to resolve reference .*: not found' "$pull_log"; then
               printf ''
               return 0
             fi
