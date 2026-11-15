@@ -1,6 +1,6 @@
 {
   "images/coder-dotnet": "0.8.1",
-  "images/coder-rea": "0.4.0",
+  "images/coder-rea": "0.4.1",
   "images/paperclip-base": "0.4.0",
   "images/paperclip-k8s": "0.2.0"
 }
