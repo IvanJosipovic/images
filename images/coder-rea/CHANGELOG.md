@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.0...coder-rea-v0.4.1) (2026-11-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency blacktop/ipsw to v3.1.746 ([#170](https://github.com/IvanJosipovic/images/issues/170)) ([bc1a80e](https://github.com/IvanJosipovic/images/commit/bc1a80ef3eae4acae0f170ad8dd726d2358d6963))
+
 ## [0.4.0](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.3.19...coder-rea-v0.4.0) (2026-11-14)
 
 
