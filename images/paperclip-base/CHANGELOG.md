@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.4.1...paperclip-base-v0.4.2) (2026-11-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.113 ([#183](https://github.com/IvanJosipovic/images/issues/183)) ([4cc733f](https://github.com/IvanJosipovic/images/commit/4cc733fe32e6d095607b9eaadae47cc356339761))
+
 ## [0.4.1](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.4.0...paperclip-base-v0.4.1) (2026-11-17)
 
 
