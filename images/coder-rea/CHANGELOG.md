@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.5](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.4...coder-rea-v0.4.5) (2026-11-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency frida-tools to v14.13.2 ([#181](https://github.com/IvanJosipovic/images/issues/181)) ([09b30cc](https://github.com/IvanJosipovic/images/commit/09b30ccaa959e48af8ce617e5ab8675356ae3ee0))
+
 ## [0.4.4](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.3...coder-rea-v0.4.4) (2026-11-16)
 
 
