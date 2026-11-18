@@ -27,7 +27,7 @@ RUN git config --system --add safe.directory /workspace && \
     git config --system --get-all safe.directory | grep -Fxq /workspace
 
 # renovate: datasource=npm depName=npm
-ARG NPM_VERSION=12.2.2
+ARG NPM_VERSION=12.2.3
 
 # renovate: datasource=npm depName=@opencode/cli
 ARG OPENCODE_VERSION=2.3.2
