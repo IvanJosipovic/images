@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.8.4](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.3...coder-dotnet-v0.8.4) (2026-11-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @anthropic-ai/claude-code to v2.1.327 ([#186](https://github.com/IvanJosipovic/images/issues/186)) ([cc05d29](https://github.com/IvanJosipovic/images/commit/cc05d2976f2bc1b86882a35853c821808aadadc5))
+* **deps:** update dependency @openai/codex to v0.169.1 ([#187](https://github.com/IvanJosipovic/images/issues/187)) ([5552182](https://github.com/IvanJosipovic/images/commit/55521825eac62107862a41dafbe4a51a39845bbf))
+* **deps:** update dependency @opencode/cli to v2.3.2 ([#188](https://github.com/IvanJosipovic/images/issues/188)) ([c8a20c9](https://github.com/IvanJosipovic/images/commit/c8a20c92c35dd85ee4ea01a43733812ee62cdd56))
+* **deps:** update dependency npm to v12.2.3 ([#189](https://github.com/IvanJosipovic/images/issues/189)) ([d307b1e](https://github.com/IvanJosipovic/images/commit/d307b1ebc07e0f49b16ea383ac8ec9ab91c6ae0e))
+
 ## [0.8.3](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.2...coder-dotnet-v0.8.3) (2026-11-17)
 
 
