@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.9](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.8...coder-rea-v0.4.9) (2026-11-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.170.0 ([#191](https://github.com/IvanJosipovic/images/issues/191)) ([36537bd](https://github.com/IvanJosipovic/images/commit/36537bd3bc039c4e0aa15a355cacdd5514340853))
+
 ## [0.4.8](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.7...coder-rea-v0.4.8) (2026-11-18)
 
 
