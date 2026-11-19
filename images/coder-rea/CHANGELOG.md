@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.10](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.9...coder-rea-v0.4.10) (2026-11-19)
+
+
+### Bug Fixes
+
+* **deps:** update codercom/enterprise-base:ubuntu docker digest to 0bf751f ([#196](https://github.com/IvanJosipovic/images/issues/196)) ([b96fb29](https://github.com/IvanJosipovic/images/commit/b96fb29fcdcc2e65bdd7ab52c4513d5aa800b62c))
+* **deps:** update dependency skylot/jadx to v1.5.7 ([#198](https://github.com/IvanJosipovic/images/issues/198)) ([52d01a0](https://github.com/IvanJosipovic/images/commit/52d01a0d3dc8e9f8bd73857267bd969558d5549c))
+
 ## [0.4.9](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.8...coder-rea-v0.4.9) (2026-11-18)
 
 

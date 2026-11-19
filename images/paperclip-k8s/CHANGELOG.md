@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/IvanJosipovic/images/compare/paperclip-k8s-v0.2.0...paperclip-k8s-v0.2.1) (2026-11-19)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/paperclipai/paperclip docker tag to v2026.1117.0 ([#199](https://github.com/IvanJosipovic/images/issues/199)) ([b8aa0e3](https://github.com/IvanJosipovic/images/commit/b8aa0e36ebbc5da103590c93a22ab70f8c7d607a))
+
 ## [0.2.0](https://github.com/IvanJosipovic/images/compare/paperclip-k8s-v0.1.0...paperclip-k8s-v0.2.0) (2026-11-08)
 
 
