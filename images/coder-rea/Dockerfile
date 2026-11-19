@@ -173,7 +173,7 @@ ARG BUNDLETOOL_VERSION=1.18.3
 ARG IPSW_VERSION=3.1.749
 
 # renovate: datasource=github-releases depName=skylot/jadx
-ARG JADX_CLI_VERSION=1.5.6
+ARG JADX_CLI_VERSION=1.5.7
 
 # renovate: datasource=github-releases depName=1013503897/jadx-headless-mcp
 ARG JADX_VERSION=0.8.0
