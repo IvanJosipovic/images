@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.6](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.4.5...paperclip-base-v0.4.6) (2026-11-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @anthropic-ai/claude-code to v2.1.328 ([#197](https://github.com/IvanJosipovic/images/issues/197)) ([4767a22](https://github.com/IvanJosipovic/images/commit/4767a22aaac7ab0371bcf3dbd94b23b417afc1ba))
+
 ## [0.4.5](https://github.com/IvanJosipovic/images/compare/paperclip-base-v0.4.4...paperclip-base-v0.4.5) (2026-11-18)
 
 

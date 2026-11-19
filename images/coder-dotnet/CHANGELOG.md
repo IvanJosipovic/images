@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.7](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.6...coder-dotnet-v0.8.7) (2026-11-19)
+
+
+### Bug Fixes
+
+* **deps:** update codercom/enterprise-base:ubuntu docker digest to 0bf751f ([#196](https://github.com/IvanJosipovic/images/issues/196)) ([b96fb29](https://github.com/IvanJosipovic/images/commit/b96fb29fcdcc2e65bdd7ab52c4513d5aa800b62c))
+* **deps:** update dependency @anthropic-ai/claude-code to v2.1.328 ([#197](https://github.com/IvanJosipovic/images/issues/197)) ([4767a22](https://github.com/IvanJosipovic/images/commit/4767a22aaac7ab0371bcf3dbd94b23b417afc1ba))
+
 ## [0.8.6](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.5...coder-dotnet-v0.8.6) (2026-11-18)
 
 
