@@ -1,4 +1,4 @@
-FROM codercom/enterprise-base:ubuntu@sha256:071363ed355e0a18a0a059989516a44dac18d6bce6b4292b77dc38b85456ef32
+FROM codercom/enterprise-base:ubuntu@sha256:0bf751fc7fd210e3b90e67a7b25adaf024185221a319feb4fa7a145d96b17e60
 
 USER root
 
