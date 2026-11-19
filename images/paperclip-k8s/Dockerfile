@@ -1,4 +1,4 @@
-FROM ghcr.io/paperclipai/paperclip:2026.1106.0
+FROM ghcr.io/paperclipai/paperclip:2026.1117.0
 
 WORKDIR /app
 
