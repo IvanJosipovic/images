@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.11](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.10...coder-rea-v0.4.11) (2026-11-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @openai/codex to v0.171.0 ([#202](https://github.com/IvanJosipovic/images/issues/202)) ([e73a834](https://github.com/IvanJosipovic/images/commit/e73a834e23f20673a8e9eab317efdba13729d39b))
+* **deps:** update dependency rea-agents to v6.10.1 ([#203](https://github.com/IvanJosipovic/images/issues/203)) ([45ff1a4](https://github.com/IvanJosipovic/images/commit/45ff1a4798c299a89cb2848ae11fedbb7954650e))
+
 ## [0.4.10](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.9...coder-rea-v0.4.10) (2026-11-19)
 
 
