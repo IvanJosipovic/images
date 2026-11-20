@@ -86,7 +86,7 @@ ARG REA_AGENTS_VERSION=6.9.0
 ARG OPENCODE_VERSION=2.3.2
 
 # renovate: datasource=npm depName=@openai/codex
-ARG CODEX_CLI_VERSION=0.170.0
+ARG CODEX_CLI_VERSION=0.171.0
 
 # renovate: datasource=npm depName=@github/copilot
 ARG COPILOT_CLI_VERSION=1.0.114
