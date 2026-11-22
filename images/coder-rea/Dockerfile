@@ -170,7 +170,7 @@ ARG APKTOOL_VERSION=3.0.3
 ARG BUNDLETOOL_VERSION=1.18.3
 
 # renovate: datasource=github-releases depName=blacktop/ipsw
-ARG IPSW_VERSION=3.1.749
+ARG IPSW_VERSION=3.1.750
 
 # renovate: datasource=github-releases depName=skylot/jadx
 ARG JADX_CLI_VERSION=1.5.7
