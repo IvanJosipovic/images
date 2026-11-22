@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.12](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.11...coder-rea-v0.4.12) (2026-11-22)
+
+
+### Bug Fixes
+
+* **deps:** update codercom/enterprise-base:ubuntu docker digest to f02bc69 ([#209](https://github.com/IvanJosipovic/images/issues/209)) ([a18b81a](https://github.com/IvanJosipovic/images/commit/a18b81a1a5475db18de3023cf18f9c5abaa24ba4))
+
 ## [0.4.11](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.10...coder-rea-v0.4.11) (2026-11-20)
 
 
