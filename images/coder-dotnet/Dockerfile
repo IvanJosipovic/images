@@ -127,7 +127,7 @@ RUN npm install --global "npm@${NPM_VERSION}" && \
     npm cache clean --force
 
 # renovate: datasource=github-releases depName=microsoft/apm
-ARG APM_VERSION=0.38.0
+ARG APM_VERSION=0.38.1
 
 RUN curl -fsSL https://aka.ms/apm-unix | VERSION="v${APM_VERSION}" sh -s -- --prefix /usr/local && \
     chmod -R a+rX /usr/local/lib/apm
