@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.14](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.13...coder-dotnet-v0.8.14) (2026-11-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @opencode/cli to v2.4.1 ([#217](https://github.com/IvanJosipovic/images/issues/217)) ([bf1ce7a](https://github.com/IvanJosipovic/images/commit/bf1ce7af7e7a35c6c75794dfc48c90d81ae864aa))
+* **deps:** update dependency microsoft/apm to v0.38.1 ([#216](https://github.com/IvanJosipovic/images/issues/216)) ([4fb99ed](https://github.com/IvanJosipovic/images/commit/4fb99ed4c3b2f163f85dffb4785bd2b29039fe55))
+
 ## [0.8.13](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.12...coder-dotnet-v0.8.13) (2026-11-23)
 
 
