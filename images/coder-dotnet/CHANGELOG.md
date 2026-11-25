@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.18](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.17...coder-dotnet-v0.8.18) (2026-11-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.116 ([#230](https://github.com/IvanJosipovic/images/issues/230)) ([39663bb](https://github.com/IvanJosipovic/images/commit/39663bb82316ff6e7040581679ad85a131a52520))
+* **deps:** update dependency microsoft/apm to v0.39.0 ([#231](https://github.com/IvanJosipovic/images/issues/231)) ([e9494e7](https://github.com/IvanJosipovic/images/commit/e9494e76f42cf6baea6b75675725280c52cf1b7a))
+
 ## [0.8.17](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.16...coder-dotnet-v0.8.17) (2026-11-25)
 
 
