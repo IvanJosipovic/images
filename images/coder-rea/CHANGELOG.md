@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.22](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.21...coder-rea-v0.4.22) (2026-11-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency unblob to v26.11.26 ([#237](https://github.com/IvanJosipovic/images/issues/237)) ([77d069b](https://github.com/IvanJosipovic/images/commit/77d069b3d640aca44ceba7f2fa0bd36c9a591b3a))
+
 ## [0.4.21](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.20...coder-rea-v0.4.21) (2026-11-26)
 
 
