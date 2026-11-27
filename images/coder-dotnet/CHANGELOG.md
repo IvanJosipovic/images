@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.20](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.19...coder-dotnet-v0.8.20) (2026-11-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency microsoft/apm to v0.39.1 ([#235](https://github.com/IvanJosipovic/images/issues/235)) ([61a5b6a](https://github.com/IvanJosipovic/images/commit/61a5b6a6a41d6e3622f2c2bd6ce924cc217b3ba0))
+
 ## [0.8.19](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.18...coder-dotnet-v0.8.19) (2026-11-26)
 
 
