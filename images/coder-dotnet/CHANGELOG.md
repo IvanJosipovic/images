@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.21](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.20...coder-dotnet-v0.8.21) (2026-11-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @github/copilot to v1.0.117 ([#239](https://github.com/IvanJosipovic/images/issues/239)) ([f23a485](https://github.com/IvanJosipovic/images/commit/f23a48565209eac7e2a901ff3ad02a0dac807921))
+
 ## [0.8.20](https://github.com/IvanJosipovic/images/compare/coder-dotnet-v0.8.19...coder-dotnet-v0.8.20) (2026-11-27)
 
 
