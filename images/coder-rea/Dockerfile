@@ -149,7 +149,7 @@ RUN cargo install binwalk --version "$BINWALK_VERSION" --locked --root /usr/loca
 ENV PATH="/usr/local/bin:/opt/ghidra:/opt/ghidra/support:/usr/lib/jvm/java-21-openjdk-${TARGETARCH}/bin:/usr/bin:/bin"
 
 # renovate: datasource=pypi depName=unblob
-ARG UNBLOB_VERSION=26.6.4
+ARG UNBLOB_VERSION=26.11.26
 
 # renovate: datasource=pypi depName=frida-tools
 ARG FRIDA_TOOLS_VERSION=14.13.2
