@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.24](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.23...coder-rea-v0.4.24) (2026-11-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency rust-lang/rust to v1.100.1 ([#241](https://github.com/IvanJosipovic/images/issues/241)) ([7663b89](https://github.com/IvanJosipovic/images/commit/7663b898cd601289d90190cadf4745caffbda886))
+
 ## [0.4.23](https://github.com/IvanJosipovic/images/compare/coder-rea-v0.4.22...coder-rea-v0.4.23) (2026-11-27)
 
 
